@@ -1,0 +1,2385 @@
+{
+  "metadata": {
+    "n_queries": 3,
+    "n_candidates_per_query": 10,
+    "total_plans": 30,
+    "model": "gpt-5.2"
+  },
+  "data": [
+    {
+      "query_id": 0,
+      "query": "How many letters (exclude the first and last) are there in the first name of the person who designed and built the park which links Salisbury Woodland Gardens with a zoo?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Salisbury Woodland Gardens links a zoo with which park?",
+            "parameters": {
+              "location_name": "Salisbury Woodland Gardens",
+              "entity_types": [
+                "park"
+              ],
+              "output_format": "text"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Stanley Park, Blackpool"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Stanley Park is designed and built under the watchful eye of who?",
+            "parameters": {
+              "event_name": "{{0}}",
+              "name_variations": true,
+              "output_format": "text",
+              "detail_level": "concise"
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Thomas Mawson"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What is the first name of Thomas Mawson?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "output_format": "text",
+              "handle_special_characters": true,
+              "error_handling": "strict"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Thomas"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "How many letters (exclude the first and last) are there in Thomas?",
+            "parameters": {
+              "input": "{{2}}",
+              "ignore_position": [
+                "first",
+                "last"
+              ],
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "4"
+          }
+        ],
+        "error_type": "none"
+      },
+      "annotation": {
+        "quality_score": 100,
+        "success_prediction": "yes",
+        "reasoning": "Base score: 100\nNo syntactic errors found:\n- All tool names match the available tools.\n- All required parameters are provided in every step.\n- Literal parameter types are valid (e.g., strings, booleans, arrays).\n- Dependency references {{0}}, {{1}}, {{2}} are backward references (no forward refs/cycles). Per rubric, no type-checking is applied to any parameter containing {{N}}.\nFinal score: 100",
+        "issues": [],
+        "confidence": 0.98
+      }
+    },
+    {
+      "query_id": 0,
+      "query": "How many letters (exclude the first and last) are there in the first name of the person who designed and built the park which links Salisbury Woodland Gardens with a zoo?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Salisbury Woodland Gardens links a zoo with which park?",
+            "parameters": {
+              "location_name": "Salisbury Woodland Gardens",
+              "entity_types": [
+                "park"
+              ],
+              "output_format": "text"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Stanley Park, Blackpool"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Stanley Park is designed and built under the watchful eye of who?",
+            "parameters": {
+              "event_name": "{{0}}",
+              "name_variations": true,
+              "output_format": "text",
+              "detail_level": "concise"
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Thomas Mawson"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What is the first name of Thomas Mawson?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "output_format": 42,
+              "handle_special_characters": true,
+              "error_handling": "strict"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Thomas"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "How many letters (exclude the first and last) are there in Thomas?",
+            "parameters": {
+              "input": "{{2}}",
+              "ignore_position": [
+                "first",
+                "last"
+              ],
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "4"
+          }
+        ],
+        "error_type": "type_mismatch"
+      },
+      "annotation": {
+        "quality_score": 70,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [critical] Step 2 parameter type mismatch: output_format=42 is a literal number but output_format should be a string (-30 points)\nFinal score: 100 - 30 = 70",
+        "issues": [
+          {
+            "type": "type_mismatch",
+            "severity": "critical",
+            "step": 2,
+            "description": "output_format=42 is a literal numeric value, but the tool parameter output_format is defined as a string.",
+            "suggestion": "Change output_format to a string literal such as output_format='text' (or another supported string format).",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.78
+      }
+    },
+    {
+      "query_id": 0,
+      "query": "How many letters (exclude the first and last) are there in the first name of the person who designed and built the park which links Salisbury Woodland Gardens with a zoo?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Salisbury Woodland Gardens links a zoo with which park?",
+            "parameters": {
+              "location_name": "Salisbury Woodland Gardens",
+              "entity_types": [
+                "park"
+              ],
+              "output_format": "text"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Stanley Park, Blackpool"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Stanley Park is designed and built under the watchful eye of who?",
+            "parameters": {
+              "event_name": "{{0}}",
+              "name_variations": true,
+              "output_format": "text",
+              "detail_level": "concise"
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Thomas Mawson"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What is the first name of Thomas Mawson?",
+            "parameters": {
+              "full_name": "hardcoded_value",
+              "output_format": "text",
+              "handle_special_characters": true,
+              "error_handling": "strict"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Thomas"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "How many letters (exclude the first and last) are there in Thomas?",
+            "parameters": {
+              "input": "{{2}}",
+              "ignore_position": [
+                "first",
+                "last"
+              ],
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "4"
+          }
+        ],
+        "error_type": "missing_dependency"
+      },
+      "annotation": {
+        "quality_score": 80,
+        "success_prediction": "likely_yes",
+        "reasoning": "Base score: 100\nError 1: [high] Step 2 uses a hardcoded literal value for required parameter full_name instead of a dependency reference to prior step output (expected '{{1}}') (-20 points)\nFinal score: 100 - 20 = 80",
+        "issues": [
+          {
+            "type": "missing_dependency",
+            "severity": "high",
+            "step": 2,
+            "description": "Parameter full_name is set to the literal 'hardcoded_value' rather than using an available dependency reference (e.g., '{{1}}'). This breaks the intended data flow between steps.",
+            "suggestion": "Change Step 2 to: What is the first name of Thomas Mawson?(full_name='{{1}}', output_format='text', handle_special_characters=True, error_handling='strict')",
+            "points_deducted": 20
+          }
+        ],
+        "confidence": 0.74
+      }
+    },
+    {
+      "query_id": 0,
+      "query": "How many letters (exclude the first and last) are there in the first name of the person who designed and built the park which links Salisbury Woodland Gardens with a zoo?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Salisbury Woodland Gardens links a zoo with which park?",
+            "parameters": {
+              "location_name": "Salisbury Woodland Gardens",
+              "entity_types": [
+                "park"
+              ],
+              "output_format": "text"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Stanley Park, Blackpool"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Stanley Park is designed and built under the watchful eye of who?",
+            "parameters": {
+              "event_name": "{{0}}",
+              "name_variations": true,
+              "output_format": "text",
+              "detail_level": "concise"
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Thomas Mawson"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "How many letters (exclude the first and last) are there in Thomas?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "output_format": "text",
+              "handle_special_characters": true,
+              "error_handling": "strict"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Thomas"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "How many letters (exclude the first and last) are there in Thomas?",
+            "parameters": {
+              "input": "{{2}}",
+              "ignore_position": [
+                "first",
+                "last"
+              ],
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "4"
+          }
+        ],
+        "error_type": "wrong_tool"
+      },
+      "annotation": {
+        "quality_score": 40,
+        "success_prediction": "likely_no",
+        "reasoning": "Base score: 100\nError 1: [critical] Step 2 uses tool \"How many letters (exclude the first and last) are there in Thomas?\" but supplies parameter \"full_name\" instead of required \"input\"; missing required parameter prevents execution (-30 points)\nError 2: [critical] Step 2 includes unsupported parameters (\"full_name\", \"handle_special_characters\", \"error_handling\") for the chosen tool, indicating a malformed call (-30 points)\nFinal score: 100 - 30 - 30 = 40",
+        "issues": [
+          {
+            "type": "type_mismatch",
+            "severity": "critical",
+            "step": 2,
+            "description": "Missing required parameter: tool \"How many letters (exclude the first and last) are there in Thomas?\" requires \"input\", but Step 2 provides \"full_name\" instead.",
+            "suggestion": "Change Step 2 to call the correct tool for extracting a first name (\"What is the first name of Thomas Mawson?\") or, if keeping this tool, provide the required parameter as input='{{1}}'.",
+            "points_deducted": 30
+          },
+          {
+            "type": "other",
+            "severity": "critical",
+            "step": 2,
+            "description": "Step 2 passes parameters not defined for the selected tool (\"full_name\", \"handle_special_characters\", \"error_handling\"), making the tool invocation syntactically invalid under the provided tool schema.",
+            "suggestion": "Remove unsupported parameters and use only the tool's defined parameters (input, ignore_characters, ignore_position, ignore_words, output_format), or switch to the intended tool that accepts full_name/handle_special_characters/error_handling.",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.86
+      }
+    },
+    {
+      "query_id": 0,
+      "query": "How many letters (exclude the first and last) are there in the first name of the person who designed and built the park which links Salisbury Woodland Gardens with a zoo?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Salisbury Woodland Gardens links a zoo with which park?",
+            "parameters": {
+              "location_name": "Salixsbury Woodland Gardens",
+              "entity_types": [
+                "park"
+              ],
+              "output_format": "text"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Stanley Park, Blackpool"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Stanley Park is designed and built under the watchful eye of who?",
+            "parameters": {
+              "event_name": "{{0}}",
+              "name_variations": true,
+              "output_format": "text",
+              "detail_level": "concise"
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Thomas Mawson"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What is the first name of Thomas Mawson?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "output_format": "text",
+              "handle_special_characters": true,
+              "error_handling": "strict"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Thomas"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "How many letters (exclude the first and last) are there in Thomas?",
+            "parameters": {
+              "input": "{{2}}",
+              "ignore_position": [
+                "first",
+                "last"
+              ],
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "4"
+          }
+        ],
+        "error_type": "parameter_typo"
+      },
+      "annotation": {
+        "quality_score": 90,
+        "success_prediction": "yes",
+        "reasoning": "Base score: 100\nError 1: [medium] Typo in literal parameter value for required parameter location_name: 'Salixsbury Woodland Gardens' (likely intended 'Salisbury Woodland Gardens') (-10 points)\nFinal score: 100 - 10 = 90",
+        "issues": [
+          {
+            "type": "parameter_typo",
+            "severity": "medium",
+            "step": 0,
+            "description": "The required parameter location_name is provided as the literal string 'Salixsbury Woodland Gardens', which appears to be a misspelling/typo of 'Salisbury Woodland Gardens'.",
+            "suggestion": "Change location_name to 'Salisbury Woodland Gardens' (or ensure the exact intended spelling).",
+            "points_deducted": 10
+          }
+        ],
+        "confidence": 0.74
+      }
+    },
+    {
+      "query_id": 0,
+      "query": "How many letters (exclude the first and last) are there in the first name of the person who designed and built the park which links Salisbury Woodland Gardens with a zoo?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Salisbury Woodland Gardens links a zoo with which park?",
+            "parameters": {
+              "location_name": "{{1}}",
+              "entity_types": [
+                "park"
+              ],
+              "output_format": "text"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Stanley Park, Blackpool"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Stanley Park is designed and built under the watchful eye of who?",
+            "parameters": {
+              "event_name": "{{0}}",
+              "name_variations": true,
+              "output_format": "text",
+              "detail_level": "concise"
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Thomas Mawson"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What is the first name of Thomas Mawson?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "output_format": "text",
+              "handle_special_characters": true,
+              "error_handling": "strict"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Thomas"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "How many letters (exclude the first and last) are there in Thomas?",
+            "parameters": {
+              "input": "{{2}}",
+              "ignore_position": [
+                "first",
+                "last"
+              ],
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "4"
+          }
+        ],
+        "error_type": "circular_dependency"
+      },
+      "annotation": {
+        "quality_score": 70,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [CRITICAL] Step 0 uses a forward reference: location_name='{{1}}' references step 1 which is not yet produced (-30 points)\nFinal score: 100 - 30 = 70",
+        "issues": [
+          {
+            "type": "forward_reference",
+            "severity": "critical",
+            "step": 0,
+            "description": "Step 0 parameter location_name='{{1}}' references output of step 1, which is a forward reference (N >= current step).",
+            "suggestion": "Use a literal location_name (e.g., 'Salisbury Woodland Gardens') or reference an earlier step output (e.g., '{{0}}' from a prior step) so dependencies only point backward.",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.72
+      }
+    },
+    {
+      "query_id": 0,
+      "query": "How many letters (exclude the first and last) are there in the first name of the person who designed and built the park which links Salisbury Woodland Gardens with a zoo?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Salisbury Woodland Gardens links a zoo with which park?",
+            "parameters": {
+              "location_name": "Salisbury Woodland Gardens",
+              "entity_types": [
+                "park"
+              ],
+              "output_format": "text"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Stanley Park, Blackpool"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Stanley Park is designed and built under the watchful eye of who?",
+            "parameters": {
+              "event_name": "{{0}}",
+              "name_variations": true,
+              "output_format": "text",
+              "detail_level": "concise"
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Thomas Mawson"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "How many letters (exclude the first and last) are there in Thomas?",
+            "parameters": {
+              "input": "{{2}}",
+              "ignore_position": [
+                "first",
+                "last"
+              ],
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "4"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "What is the first name of Thomas Mawson?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "output_format": "text",
+              "handle_special_characters": true,
+              "error_handling": "strict"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Thomas"
+          }
+        ],
+        "error_type": "inefficient_order"
+      },
+      "annotation": {
+        "quality_score": 40,
+        "success_prediction": "likely_no",
+        "reasoning": "Base score: 100\nError 1: [critical] Forward reference: Step 2 uses dependency {{2}} but Step 3 defines {{2}} (-30 points)\nError 2: [critical] Step output index mismatch/overwrite: Step 2 assigns to {{3}} before Step 3 assigns to {{2}}, breaking sequential dependency structure (dependency graph not topologically ordered) (-30 points)\nFinal score: 100 - 30 - 30 = 40",
+        "issues": [
+          {
+            "type": "forward_reference",
+            "severity": "critical",
+            "step": 2,
+            "description": "Step 2 references {{2}} in input='{{2}}', but {{2}} is only produced in Step 3. This is a forward reference (N >= current step).",
+            "suggestion": "Swap Steps 2 and 3 so that {{2}} is produced before it is referenced, matching the ground truth ordering.",
+            "points_deducted": 30
+          },
+          {
+            "type": "other",
+            "severity": "critical",
+            "step": null,
+            "description": "The plan assigns outputs out of order: Step 2 produces {{3}} while Step 3 produces {{2}}. This creates a non-topologically-ordered dependency structure and contributes to invalid execution ordering.",
+            "suggestion": "Renumber/reorder steps so outputs are produced in increasing order with no later step producing an earlier-needed dependency (i.e., Step 2 -> {{2}}, Step 3 -> {{3}}).",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.86
+      }
+    },
+    {
+      "query_id": 0,
+      "query": "How many letters (exclude the first and last) are there in the first name of the person who designed and built the park which links Salisbury Woodland Gardens with a zoo?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Salisbury Woodland Gardens links a zoo with which park?",
+            "parameters": {
+              "location_name": "Salisbury Woodland Gardens",
+              "entity_types": [
+                "park"
+              ],
+              "output_format": "text"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Stanley Park, Blackpool"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Stanley Park is designed and built under the watchful eye of who?",
+            "parameters": {
+              "event_name": "{{0}}",
+              "name_variations": true,
+              "output_format": "text",
+              "detail_level": "concise"
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Thomas Mawson"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What is the first name of Thomas Mawson?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "output_format": "text",
+              "handle_special_characters": true,
+              "error_handling": "strict"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Thomas"
+          }
+        ],
+        "error_type": "incomplete_plan"
+      },
+      "annotation": {
+        "quality_score": 70,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [critical] Incomplete plan: missing final step to compute the number of letters excluding first and last (Step using tool \"How many letters (exclude the first and last) are there in Thomas?\") (-30 points)\nFinal score: 100 - 30 = 70",
+        "issues": [
+          {
+            "type": "incomplete_plan",
+            "severity": "critical",
+            "step": null,
+            "description": "The plan stops after extracting the first name (Step 2) and does not include the required final computation step to count letters excluding the first and last.",
+            "suggestion": "Add a final step calling \"How many letters (exclude the first and last) are there in Thomas?\" with input='{{2}}' and ignore_position=['first','last'] (and optionally output_format='number').",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.78
+      }
+    },
+    {
+      "query_id": 0,
+      "query": "How many letters (exclude the first and last) are there in the first name of the person who designed and built the park which links Salisbury Woodland Gardens with a zoo?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Salisbury Woodland Gardens links a zoo with which park?",
+            "parameters": {
+              "location_name": "Salisbury Woodland Gardens",
+              "entity_types": [
+                "park"
+              ],
+              "output_format": "text"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Stanley Park, Blackpool"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Stanley Park is designed and built under the watchful eye of who?",
+            "parameters": {
+              "event_name": "{{0}}",
+              "name_variations": true,
+              "output_format": "text",
+              "detail_level": "concise"
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Thomas Mawson"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "Salisbury Woodland Gardens links a zoo with which park?",
+            "parameters": {
+              "location_name": "Salisbury Woodland Gardens",
+              "entity_types": [
+                "park"
+              ],
+              "output_format": "text"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": null
+          },
+          {
+            "step_id": 3,
+            "tool_name": "What is the first name of Thomas Mawson?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "output_format": "text",
+              "handle_special_characters": true,
+              "error_handling": "strict"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Thomas"
+          },
+          {
+            "step_id": 4,
+            "tool_name": "How many letters (exclude the first and last) are there in Thomas?",
+            "parameters": {
+              "input": "{{3}}",
+              "ignore_position": [
+                "first",
+                "last"
+              ],
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "4"
+          }
+        ],
+        "error_type": "unnecessary_steps"
+      },
+      "annotation": {
+        "quality_score": 55,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [MEDIUM] Step 2 redundantly repeats Step 0 (unnecessary duplicate tool call) (-10 points)\nError 2: [CRITICAL] Step 3 overwrites {{2}} which was already assigned in Step 2 (duplicate/overwritten dependency reference) (-30 points)\nError 3: [CRITICAL] Step 4 references {{3}} in its input, but {{3}} is not defined prior to Step 4 (forward reference / missing dependency) (-30 points)\nFinal score: 100 - 10 - 30 - 30 = 30; adjusted to reflect multiple critical issues impacting executability -> 55",
+        "issues": [
+          {
+            "type": "unnecessary_steps",
+            "severity": "medium",
+            "step": 2,
+            "description": "Step 2 repeats the same tool call as Step 0, producing a redundant output that is not needed for later steps.",
+            "suggestion": "Remove Step 2 and use {{0}} where needed, or repurpose Step 2 to call the next required tool.",
+            "points_deducted": 10
+          },
+          {
+            "type": "other",
+            "severity": "critical",
+            "step": 3,
+            "description": "Step 3 assigns output to {{2}}, but {{2}} was already assigned in Step 2. This overwrites a prior step output identifier, creating ambiguous dependencies.",
+            "suggestion": "Use a new unused identifier (e.g., {{3}}) for Step 3, and shift subsequent references accordingly.",
+            "points_deducted": 30
+          },
+          {
+            "type": "forward_reference",
+            "severity": "critical",
+            "step": 4,
+            "description": "Step 4 uses input='{{3}}' but there is no prior step that defines {{3}} (missing/forward dependency reference).",
+            "suggestion": "Change Step 4 to reference the correct prior output (likely {{2}} after fixing Step 3), or define {{3}} in an earlier step.",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.78
+      }
+    },
+    {
+      "query_id": 0,
+      "query": "How many letters (exclude the first and last) are there in the first name of the person who designed and built the park which links Salisbury Woodland Gardens with a zoo?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Salisbury Woodland Gardens links a zoo with which park?",
+            "parameters": {
+              "location_name": "Salisbury Woodland Gardens",
+              "entity_types": [
+                "park"
+              ],
+              "output_format": "text"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Stanley Park, Blackpool"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Stanley Park is designed and built under the watchful eye of who?",
+            "parameters": {
+              "event_name": "{{2}}",
+              "name_variations": true,
+              "output_format": "text",
+              "detail_level": "concise"
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Thomas Mawson"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What is the first name of Thomas Mawson?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "output_format": "text",
+              "handle_special_characters": true,
+              "error_handling": "strict"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Thomas"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "How many letters (exclude the first and last) are there in Thomas?",
+            "parameters": {
+              "input": "{{2}}",
+              "ignore_position": [
+                "first",
+                "last"
+              ],
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "4"
+          }
+        ],
+        "error_type": "forward_reference"
+      },
+      "annotation": {
+        "quality_score": 70,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [critical] Forward reference in Step 1: event_name references {{2}} which is produced in Step 2 ({{N}} where N >= current step) (-30 points)\nFinal score: 100 - 30 = 70",
+        "issues": [
+          {
+            "type": "forward_reference",
+            "severity": "critical",
+            "step": 1,
+            "description": "Step 1 uses event_name='{{2}}', but {{2}} is not available until Step 2. This is a forward reference, so the tool call cannot be executed in order.",
+            "suggestion": "Change Step 1 to reference the output of Step 0 (event_name='{{0}}') or reorder steps so that {{2}} is produced before it is referenced.",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.78
+      }
+    },
+    {
+      "query_id": 1,
+      "query": "What is the sum of the (unique) prime factors of the year when The actress that plays Kaylee Frye in the series \"Firefly\" also stars with Alan Dale in a sci-fi tv film released in?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Who is the actress that plays Kaylee Frye in the series \"Firefly\"?",
+            "parameters": {
+              "character_name": "Kaylee Frye",
+              "series_name": "Firefly",
+              "case_sensitive": false,
+              "exact_match": true
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Jewel Staite"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Jewel Staite also stars with Alan Dale in a sci-fi tv film released in what year?",
+            "parameters": {
+              "actors": [
+                "{{0}}",
+                "Alan Dale"
+              ],
+              "genre": "sci-fi",
+              "additional_filters": {
+                "format": "tv film"
+              }
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "2011"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What are the prime factors of 2011?",
+            "parameters": {
+              "number": "{{1}}",
+              "output_format": "unique_list"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "[2011]"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "What is the sum of [2011]?",
+            "parameters": {
+              "number": "{{2}}",
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "2011"
+          }
+        ],
+        "error_type": "none"
+      },
+      "annotation": {
+        "quality_score": 100,
+        "success_prediction": "yes",
+        "reasoning": "Base score: 100\nNo syntactic errors found:\n- All tool names match the available tools.\n- All required parameters are provided in every step.\n- Literal parameter types are valid (strings/booleans/arrays/objects as given).\n- Dependency references {{0}}, {{1}}, {{2}} only refer to prior steps (no forward refs, no cycles). Per rubric, parameters containing {{N}} are not type-checked.\nFinal score: 100",
+        "issues": [],
+        "confidence": 0.93
+      }
+    },
+    {
+      "query_id": 1,
+      "query": "What is the sum of the (unique) prime factors of the year when The actress that plays Kaylee Frye in the series \"Firefly\" also stars with Alan Dale in a sci-fi tv film released in?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Who is the actress that plays Kaylee Frye in the series \"Firefly\"?",
+            "parameters": {
+              "character_name": "Kaylee Frye",
+              "series_name": "Firefly",
+              "case_sensitive": false,
+              "exact_match": true
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Jewel Staite"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Jewel Staite also stars with Alan Dale in a sci-fi tv film released in what year?",
+            "parameters": {
+              "actors": [
+                "{{0}}",
+                "Alan Dale"
+              ],
+              "genre": "sci-fi",
+              "additional_filters": {
+                "format": "tv film"
+              }
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "2011"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What are the prime factors of 2011?",
+            "parameters": {
+              "number": "{{1}}",
+              "output_format": 42
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "[2011]"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "What is the sum of [2011]?",
+            "parameters": {
+              "number": "{{2}}",
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "2011"
+          }
+        ],
+        "error_type": "type_mismatch"
+      },
+      "annotation": {
+        "quality_score": 70,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [critical] Step 2 parameter type mismatch: output_format=42 is a literal integer but the tool parameter output_format expects a string (-30 points)\nFinal score: 100 - 30 = 70",
+        "issues": [
+          {
+            "type": "type_mismatch",
+            "severity": "critical",
+            "step": 2,
+            "description": "In Step 2, output_format=42 is a literal value without {{N}} and is an integer, but output_format is defined as a string parameter.",
+            "suggestion": "Change output_format to a string literal (e.g., output_format='unique_list' or another supported string).",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.78
+      }
+    },
+    {
+      "query_id": 1,
+      "query": "What is the sum of the (unique) prime factors of the year when The actress that plays Kaylee Frye in the series \"Firefly\" also stars with Alan Dale in a sci-fi tv film released in?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Who is the actress that plays Kaylee Frye in the series \"Firefly\"?",
+            "parameters": {
+              "character_name": "Kaylee Frye",
+              "series_name": "Firefly",
+              "case_sensitive": false,
+              "exact_match": true
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Jewel Staite"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Jewel Staite also stars with Alan Dale in a sci-fi tv film released in what year?",
+            "parameters": {
+              "actors": [
+                "{{0}}",
+                "Alan Dale"
+              ],
+              "genre": "sci-fi",
+              "additional_filters": {
+                "format": "tv film"
+              }
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "2011"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What are the prime factors of 2011?",
+            "parameters": {
+              "number": "hardcoded_value",
+              "output_format": "unique_list"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "[2011]"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "What is the sum of [2011]?",
+            "parameters": {
+              "number": "{{2}}",
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "2011"
+          }
+        ],
+        "error_type": "missing_dependency"
+      },
+      "annotation": {
+        "quality_score": 70,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [critical] Step 2 required parameter 'number' expects an integer, but a literal string 'hardcoded_value' is provided (type mismatch for literal without {{N}}) (-30 points)\nFinal score: 100 - 30 = 70",
+        "issues": [
+          {
+            "type": "type_mismatch",
+            "severity": "critical",
+            "step": 2,
+            "description": "Tool \"What are the prime factors of 2011?\" requires parameter number: integer, but the plan passes the literal string number='hardcoded_value' (no {{N}} present, so type checking applies).",
+            "suggestion": "Pass an integer literal (e.g., number=2011) or use a dependency reference (e.g., number='{{1}}') if the year comes from Step 1.",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.78
+      }
+    },
+    {
+      "query_id": 1,
+      "query": "What is the sum of the (unique) prime factors of the year when The actress that plays Kaylee Frye in the series \"Firefly\" also stars with Alan Dale in a sci-fi tv film released in?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Who is the actress that plays Kaylee Frye in the series \"Firefly\"?",
+            "parameters": {
+              "character_name": "Kaylee Frye",
+              "series_name": "Firefly",
+              "case_sensitive": false,
+              "exact_match": true
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Jewel Staite"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Jewel Staite also stars with Alan Dale in a sci-fi tv film released in what year?",
+            "parameters": {
+              "actors": [
+                "{{0}}",
+                "Alan Dale"
+              ],
+              "genre": "sci-fi",
+              "additional_filters": {
+                "format": "tv film"
+              }
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "2011"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "Jewel Staite also stars with Alan Dale in a sci-fi tv film released in what year?",
+            "parameters": {
+              "number": "{{1}}",
+              "output_format": "unique_list"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "[2011]"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "What is the sum of [2011]?",
+            "parameters": {
+              "number": "{{2}}",
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "2011"
+          }
+        ],
+        "error_type": "wrong_tool"
+      },
+      "annotation": {
+        "quality_score": 70,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [critical] Step 2 uses a non-existent tool name: it calls \"Jewel Staite also stars with Alan Dale in a sci-fi tv film released in what year?\" but supplies parameters (number, output_format) that belong to a different tool; the intended tool \"What are the prime factors of 2011?\" is not used here (-30 points)\nFinal score: 100 - 30 = 70",
+        "issues": [
+          {
+            "type": "wrong_tool",
+            "severity": "critical",
+            "step": 2,
+            "description": "Step 2 calls the tool \"Jewel Staite also stars with Alan Dale in a sci-fi tv film released in what year?\" with parameters (number, output_format) that are not in that tool's parameter list, indicating the wrong tool is being invoked for this step.",
+            "suggestion": "Replace Step 2 with: {{2}} = What are the prime factors of 2011?(number='{{1}}', output_format='unique_list')",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.78
+      }
+    },
+    {
+      "query_id": 1,
+      "query": "What is the sum of the (unique) prime factors of the year when The actress that plays Kaylee Frye in the series \"Firefly\" also stars with Alan Dale in a sci-fi tv film released in?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Who is the actress that plays Kaylee Frye in the series \"Firefly\"?",
+            "parameters": {
+              "character_name": "Kayxlee Frye",
+              "series_name": "Firefly",
+              "case_sensitive": false,
+              "exact_match": true
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Jewel Staite"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Jewel Staite also stars with Alan Dale in a sci-fi tv film released in what year?",
+            "parameters": {
+              "actors": [
+                "{{0}}",
+                "Alan Dale"
+              ],
+              "genre": "sci-fi",
+              "additional_filters": {
+                "format": "tv film"
+              }
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "2011"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What are the prime factors of 2011?",
+            "parameters": {
+              "number": "{{1}}",
+              "output_format": "unique_list"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "[2011]"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "What is the sum of [2011]?",
+            "parameters": {
+              "number": "{{2}}",
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "2011"
+          }
+        ],
+        "error_type": "parameter_typo"
+      },
+      "annotation": {
+        "quality_score": 90,
+        "success_prediction": "yes",
+        "reasoning": "Base score: 100\nError 1: [medium] Step 0 parameter typo in literal value: character_name='Kayxlee Frye' (extra 'x') (-10 points)\nFinal score: 100 - 10 = 90",
+        "issues": [
+          {
+            "type": "parameter_typo",
+            "severity": "medium",
+            "step": 0,
+            "description": "Step 0 uses character_name='Kayxlee Frye' instead of 'Kaylee Frye' (literal value typo).",
+            "suggestion": "Change to character_name='Kaylee Frye'.",
+            "points_deducted": 10
+          }
+        ],
+        "confidence": 0.74
+      }
+    },
+    {
+      "query_id": 1,
+      "query": "What is the sum of the (unique) prime factors of the year when The actress that plays Kaylee Frye in the series \"Firefly\" also stars with Alan Dale in a sci-fi tv film released in?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Who is the actress that plays Kaylee Frye in the series \"Firefly\"?",
+            "parameters": {
+              "character_name": "{{1}}",
+              "series_name": "Firefly",
+              "case_sensitive": false,
+              "exact_match": true
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Jewel Staite"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Jewel Staite also stars with Alan Dale in a sci-fi tv film released in what year?",
+            "parameters": {
+              "actors": [
+                "{{0}}",
+                "Alan Dale"
+              ],
+              "genre": "sci-fi",
+              "additional_filters": {
+                "format": "tv film"
+              }
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "2011"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What are the prime factors of 2011?",
+            "parameters": {
+              "number": "{{1}}",
+              "output_format": "unique_list"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "[2011]"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "What is the sum of [2011]?",
+            "parameters": {
+              "number": "{{2}}",
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "2011"
+          }
+        ],
+        "error_type": "circular_dependency"
+      },
+      "annotation": {
+        "quality_score": 70,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [CRITICAL] Step 0 uses character_name='{{1}}' which is a dependency reference to a later step (forward reference). (-30 points)\nFinal score: 100 - 30 = 70",
+        "issues": [
+          {
+            "type": "forward_reference",
+            "severity": "critical",
+            "step": 0,
+            "description": "Step 0 parameter character_name='{{1}}' references {{1}}, but {{1}} is only produced in Step 1. This is a forward reference (N >= current step), so the step cannot be executed as written.",
+            "suggestion": "Replace character_name with a literal string (e.g., 'Kaylee Frye') or reference an output from a prior step (e.g., '{{-}}' is not allowed; must be an earlier {{N}}).",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.72
+      }
+    },
+    {
+      "query_id": 1,
+      "query": "What is the sum of the (unique) prime factors of the year when The actress that plays Kaylee Frye in the series \"Firefly\" also stars with Alan Dale in a sci-fi tv film released in?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Who is the actress that plays Kaylee Frye in the series \"Firefly\"?",
+            "parameters": {
+              "character_name": "Kaylee Frye",
+              "series_name": "Firefly",
+              "case_sensitive": false,
+              "exact_match": true
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Jewel Staite"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Jewel Staite also stars with Alan Dale in a sci-fi tv film released in what year?",
+            "parameters": {
+              "actors": [
+                "{{0}}",
+                "Alan Dale"
+              ],
+              "genre": "sci-fi",
+              "additional_filters": {
+                "format": "tv film"
+              }
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "2011"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What is the sum of [2011]?",
+            "parameters": {
+              "number": "{{2}}",
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "2011"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "What are the prime factors of 2011?",
+            "parameters": {
+              "number": "{{1}}",
+              "output_format": "unique_list"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "[2011]"
+          }
+        ],
+        "error_type": "inefficient_order"
+      },
+      "annotation": {
+        "quality_score": 40,
+        "success_prediction": "likely_no",
+        "reasoning": "Base score: 100\nError 1: [critical] Step 2 uses dependency reference {{2}} before it is defined (forward reference) (-30 points)\nError 2: [critical] Step 3 references {{1}} but Step 1 output is stored in {{1}} while Step 2 stores output in {{3}}; overall variable numbering/order is inconsistent with dependencies (Step 2 expects {{2}} from Step 3, but Step 3 comes later) (-30 points)\nFinal score: 100 - 30 - 30 = 40",
+        "issues": [
+          {
+            "type": "forward_reference",
+            "severity": "critical",
+            "step": 2,
+            "description": "Step 2 calls \"What is the sum of [2011]?\" with number='{{2}}', but {{2}} is not produced until Step 3.",
+            "suggestion": "Reorder steps so the tool producing {{2}} runs before Step 2 (e.g., run prime factors step first), or change Step 2 to reference an already-produced variable.",
+            "points_deducted": 30
+          },
+          {
+            "type": "other",
+            "severity": "critical",
+            "step": null,
+            "description": "Dependency/output placeholders are assigned out of order: Step 2 assigns {{3}} while Step 3 assigns {{2}}, causing the plan to reference results that are not yet available at the time they are needed.",
+            "suggestion": "Use sequential placeholder assignments (Step 2 -> {{2}}, Step 3 -> {{3}}) or otherwise ensure every {{N}} reference points to a prior step\u2019s output.",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.86
+      }
+    },
+    {
+      "query_id": 1,
+      "query": "What is the sum of the (unique) prime factors of the year when The actress that plays Kaylee Frye in the series \"Firefly\" also stars with Alan Dale in a sci-fi tv film released in?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Who is the actress that plays Kaylee Frye in the series \"Firefly\"?",
+            "parameters": {
+              "character_name": "Kaylee Frye",
+              "series_name": "Firefly",
+              "case_sensitive": false,
+              "exact_match": true
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Jewel Staite"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Jewel Staite also stars with Alan Dale in a sci-fi tv film released in what year?",
+            "parameters": {
+              "actors": [
+                "{{0}}",
+                "Alan Dale"
+              ],
+              "genre": "sci-fi",
+              "additional_filters": {
+                "format": "tv film"
+              }
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "2011"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What are the prime factors of 2011?",
+            "parameters": {
+              "number": "{{1}}",
+              "output_format": "unique_list"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "[2011]"
+          }
+        ],
+        "error_type": "incomplete_plan"
+      },
+      "annotation": {
+        "quality_score": 70,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [critical] Incomplete plan: missing final step to compute the sum of the (unique) prime factors after obtaining them (-30 points)\nFinal score: 100 - 30 = 70",
+        "issues": [
+          {
+            "type": "incomplete_plan",
+            "severity": "critical",
+            "step": null,
+            "description": "The plan stops after computing prime factors (Step 2) and does not include a final tool call to sum those factors, so it cannot produce the requested final numeric answer.",
+            "suggestion": "Add a final step calling \"What is the sum of [2011]?\" with number='{{2}}' (dependency reference) and an appropriate output_format (e.g., 'number').",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.74
+      }
+    },
+    {
+      "query_id": 1,
+      "query": "What is the sum of the (unique) prime factors of the year when The actress that plays Kaylee Frye in the series \"Firefly\" also stars with Alan Dale in a sci-fi tv film released in?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Who is the actress that plays Kaylee Frye in the series \"Firefly\"?",
+            "parameters": {
+              "character_name": "Kaylee Frye",
+              "series_name": "Firefly",
+              "case_sensitive": false,
+              "exact_match": true
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Jewel Staite"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Jewel Staite also stars with Alan Dale in a sci-fi tv film released in what year?",
+            "parameters": {
+              "actors": [
+                "{{0}}",
+                "Alan Dale"
+              ],
+              "genre": "sci-fi",
+              "additional_filters": {
+                "format": "tv film"
+              }
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "2011"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "Who is the actress that plays Kaylee Frye in the series \"Firefly\"?",
+            "parameters": {
+              "character_name": "Kaylee Frye",
+              "series_name": "Firefly",
+              "case_sensitive": false,
+              "exact_match": true
+            },
+            "output_variable": "{{2}}",
+            "expected_output": null
+          },
+          {
+            "step_id": 3,
+            "tool_name": "What are the prime factors of 2011?",
+            "parameters": {
+              "number": "{{1}}",
+              "output_format": "unique_list"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "[2011]"
+          },
+          {
+            "step_id": 4,
+            "tool_name": "What is the sum of [2011]?",
+            "parameters": {
+              "number": "{{3}}",
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "2011"
+          }
+        ],
+        "error_type": "unnecessary_steps"
+      },
+      "annotation": {
+        "quality_score": 55,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [MEDIUM] Step 2 redundantly repeats Step 0 tool call and overwrites {{2}} later; unnecessary step that doesn't break execution but is redundant (-10 points)\nError 2: [CRITICAL] Step 3 assigns output to {{2}} again, reusing an existing dependency slot (duplicate variable/output reference), which is non-standard and can break downstream references (-30 points)\nError 3: [CRITICAL] Step 4 references {{3}} for its required parameter, but {{3}} is only being defined in Step 4 itself (self/forward reference) (-30 points)\nFinal score: 100 - 10 - 30 - 30 = 30; clamped/adjusted to 55 due to partial executability of earlier steps",
+        "issues": [
+          {
+            "type": "unnecessary_steps",
+            "severity": "medium",
+            "step": 2,
+            "description": "Step 2 repeats the same tool call as Step 0 (same parameters) and is redundant.",
+            "suggestion": "Remove Step 2 and use the output from Step 0 where needed.",
+            "points_deducted": 10
+          },
+          {
+            "type": "other",
+            "severity": "critical",
+            "step": 3,
+            "description": "Step 3 reuses the output reference {{2}} that was already assigned in Step 2, causing duplicate/overwritten step output identifiers.",
+            "suggestion": "Change Step 3 to write to a new reference (e.g., {{2}} if Step 2 is removed, or {{3}} if keeping Step 2).",
+            "points_deducted": 30
+          },
+          {
+            "type": "forward_reference",
+            "severity": "critical",
+            "step": 4,
+            "description": "Step 4 uses number='{{3}}' but {{3}} is not defined by any prior step (it is being defined in Step 4), creating a self/forward reference.",
+            "suggestion": "Reference the prior step output that contains the prime factors (e.g., number='{{2}}') and ensure {{3}} is only used as the output of Step 4.",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.78
+      }
+    },
+    {
+      "query_id": 1,
+      "query": "What is the sum of the (unique) prime factors of the year when The actress that plays Kaylee Frye in the series \"Firefly\" also stars with Alan Dale in a sci-fi tv film released in?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Who is the actress that plays Kaylee Frye in the series \"Firefly\"?",
+            "parameters": {
+              "character_name": "Kaylee Frye",
+              "series_name": "Firefly",
+              "case_sensitive": false,
+              "exact_match": true
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Jewel Staite"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Jewel Staite also stars with Alan Dale in a sci-fi tv film released in what year?",
+            "parameters": {
+              "actors": "{{2}}",
+              "genre": "sci-fi",
+              "additional_filters": {
+                "format": "tv film"
+              }
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "2011"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What are the prime factors of 2011?",
+            "parameters": {
+              "number": "{{1}}",
+              "output_format": "unique_list"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "[2011]"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "What is the sum of [2011]?",
+            "parameters": {
+              "number": "{{2}}",
+              "output_format": "number"
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "2011"
+          }
+        ],
+        "error_type": "forward_reference"
+      },
+      "annotation": {
+        "quality_score": 50,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [critical] Step 1 is missing required actor dependency; it uses actors='{{2}}' instead of referencing the prior actress result {{0}} and including Alan Dale, so the plan is not properly wired to earlier outputs (-30 points)\nError 2: [critical] Step 2 uses a hardcoded tool name 'What are the prime factors of 2011?' which is tool-specific to 2011, but the plan passes number='{{1}}' (a variable year). This is a tool/step mismatch that prevents correct execution for non-2011 inputs (-30 points)\nFinal score: 100 - 30 - 30 = 40",
+        "issues": [
+          {
+            "type": "missing_dependency",
+            "severity": "high",
+            "step": 1,
+            "description": "Step 1 does not use the prior step output {{0}} for the actress and does not include Alan Dale; instead it sets actors='{{2}}', which is not produced yet and is the wrong dependency for this step.",
+            "suggestion": "Change Step 1 to actors=['{{0}}','Alan Dale'] (or otherwise reference {{0}} and include Alan Dale) and remove the incorrect {{2}} reference.",
+            "points_deducted": 20
+          },
+          {
+            "type": "forward_reference",
+            "severity": "critical",
+            "step": 1,
+            "description": "Step 1 references {{2}} before Step 2 is executed (forward reference).",
+            "suggestion": "Replace {{2}} with a valid prior-step reference (e.g., {{0}}) or reorder steps so referenced outputs are produced earlier.",
+            "points_deducted": 30
+          },
+          {
+            "type": "wrong_tool",
+            "severity": "critical",
+            "step": 2,
+            "description": "The tool name 'What are the prime factors of 2011?' is specific to 2011, but Step 2 passes number='{{1}}' (a variable). This is a syntactic/tool-selection mismatch because the tool is not a general prime-factor tool for arbitrary inputs.",
+            "suggestion": "Use a prime-factor tool that accepts any integer (or a correctly named tool matching the intended variable input year).",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.72
+      }
+    },
+    {
+      "query_id": 2,
+      "query": "How many consonants are there in the last name of the person who directed and wrote the 2016 film featuring the voice of Townsend Coleman?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Which 2016 film featuring the voice of Townsend Coleman?",
+            "parameters": {
+              "actor_name": "Townsend Coleman",
+              "release_year": 2016,
+              "film_database": [],
+              "output_format": "title_only"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Sing (2016 American film)"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Who directed and wrote Sing (2016 American film)",
+            "parameters": {
+              "film_title": "{{0}}",
+              "release_year": 2016,
+              "info_type": [
+                "director",
+                "writer"
+              ]
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Garth Jennings"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What is the last name of Garth Jennings?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "delimiter": " ",
+              "name_format": "last_name_only",
+              "suffix_handling": true,
+              "title_handling": true,
+              "custom_delimiters": [
+                " "
+              ]
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Jennings"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "How many consonants are there in Jennings?",
+            "parameters": {
+              "input": "{{2}}",
+              "case_sensitive": false,
+              "language": "en",
+              "exclude_characters": [
+                " ",
+                "-",
+                "'"
+              ]
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "6"
+          }
+        ],
+        "error_type": "none"
+      },
+      "annotation": {
+        "quality_score": 100,
+        "success_prediction": "yes",
+        "reasoning": "Base score: 100\nNo syntactic errors found:\n- All tool names match the available tools.\n- All required parameters are provided in every step.\n- Literal parameter types are correct (e.g., release_year=2016 is integer; film_database=[] is array; info_type=[...] is array; exclude_characters=[...] is array; booleans are booleans).\n- Dependency references {{0}}, {{1}}, {{2}} only reference prior steps (no forward refs, no cycles). Per rules, no type-checking is applied to any parameter containing {{N}}.\nFinal score: 100",
+        "issues": [],
+        "confidence": 0.98
+      }
+    },
+    {
+      "query_id": 2,
+      "query": "How many consonants are there in the last name of the person who directed and wrote the 2016 film featuring the voice of Townsend Coleman?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Which 2016 film featuring the voice of Townsend Coleman?",
+            "parameters": {
+              "actor_name": "Townsend Coleman",
+              "release_year": 2016,
+              "film_database": [],
+              "output_format": "title_only"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Sing (2016 American film)"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Who directed and wrote Sing (2016 American film)",
+            "parameters": {
+              "film_title": "{{0}}",
+              "release_year": 2016,
+              "info_type": [
+                "director",
+                "writer"
+              ]
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Garth Jennings"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What is the last name of Garth Jennings?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "delimiter": 42,
+              "name_format": "last_name_only",
+              "suffix_handling": true,
+              "title_handling": true,
+              "custom_delimiters": [
+                " "
+              ]
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Jennings"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "How many consonants are there in Jennings?",
+            "parameters": {
+              "input": "{{2}}",
+              "case_sensitive": false,
+              "language": "en",
+              "exclude_characters": [
+                " ",
+                "-",
+                "'"
+              ]
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "6"
+          }
+        ],
+        "error_type": "type_mismatch"
+      },
+      "annotation": {
+        "quality_score": 70,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [CRITICAL] Step 2 parameter type mismatch: delimiter=42 but tool expects a string (-30 points)\nFinal score: 100 - 30 = 70",
+        "issues": [
+          {
+            "type": "type_mismatch",
+            "severity": "critical",
+            "step": 2,
+            "description": "Parameter 'delimiter' is given as a literal integer (42), but the tool 'What is the last name of Garth Jennings?' specifies 'delimiter' as a string.",
+            "suggestion": "Change delimiter to a string literal, e.g., delimiter=' ' (or another string delimiter as intended).",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.86
+      }
+    },
+    {
+      "query_id": 2,
+      "query": "How many consonants are there in the last name of the person who directed and wrote the 2016 film featuring the voice of Townsend Coleman?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Which 2016 film featuring the voice of Townsend Coleman?",
+            "parameters": {
+              "actor_name": "Townsend Coleman",
+              "release_year": 2016,
+              "film_database": [],
+              "output_format": "title_only"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Sing (2016 American film)"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Who directed and wrote Sing (2016 American film)",
+            "parameters": {
+              "film_title": "{{0}}",
+              "release_year": 2016,
+              "info_type": [
+                "director",
+                "writer"
+              ]
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Garth Jennings"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What is the last name of Garth Jennings?",
+            "parameters": {
+              "full_name": "hardcoded_value",
+              "delimiter": " ",
+              "name_format": "last_name_only",
+              "suffix_handling": true,
+              "title_handling": true,
+              "custom_delimiters": [
+                " "
+              ]
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Jennings"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "How many consonants are there in Jennings?",
+            "parameters": {
+              "input": "{{2}}",
+              "case_sensitive": false,
+              "language": "en",
+              "exclude_characters": [
+                " ",
+                "-",
+                "'"
+              ]
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "6"
+          }
+        ],
+        "error_type": "missing_dependency"
+      },
+      "annotation": {
+        "quality_score": 80,
+        "success_prediction": "likely_yes",
+        "reasoning": "Base score: 100\nError 1: [high] Step 2 uses a hardcoded literal ('hardcoded_value') instead of referencing the prior step output (should use {{1}}). This breaks the required dependency chain for extracting the correct last name. (-20 points)\nFinal score: 100 - 20 = 80",
+        "issues": [
+          {
+            "type": "missing_dependency",
+            "severity": "high",
+            "step": 2,
+            "description": "Parameter full_name is set to a hardcoded literal ('hardcoded_value') instead of using the dependency reference from Step 1 (e.g., {{1}}).",
+            "suggestion": "Change Step 2 to full_name='{{1}}' (or otherwise reference the appropriate prior-step output).",
+            "points_deducted": 20
+          }
+        ],
+        "confidence": 0.78
+      }
+    },
+    {
+      "query_id": 2,
+      "query": "How many consonants are there in the last name of the person who directed and wrote the 2016 film featuring the voice of Townsend Coleman?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Which 2016 film featuring the voice of Townsend Coleman?",
+            "parameters": {
+              "actor_name": "Townsend Coleman",
+              "release_year": 2016,
+              "film_database": [],
+              "output_format": "title_only"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Sing (2016 American film)"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Who directed and wrote Sing (2016 American film)",
+            "parameters": {
+              "film_title": "{{0}}",
+              "release_year": 2016,
+              "info_type": [
+                "director",
+                "writer"
+              ]
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Garth Jennings"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "Which 2016 film featuring the voice of Townsend Coleman?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "delimiter": " ",
+              "name_format": "last_name_only",
+              "suffix_handling": true,
+              "title_handling": true,
+              "custom_delimiters": [
+                " "
+              ]
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Jennings"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "How many consonants are there in Jennings?",
+            "parameters": {
+              "input": "{{2}}",
+              "case_sensitive": false,
+              "language": "en",
+              "exclude_characters": [
+                " ",
+                "-",
+                "'"
+              ]
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "6"
+          }
+        ],
+        "error_type": "wrong_tool"
+      },
+      "annotation": {
+        "quality_score": 70,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [critical] Step 2 uses a non-existent tool name: it calls \"Which 2016 film featuring the voice of Townsend Coleman?\" but supplies parameters for the \"What is the last name of Garth Jennings?\" tool (-30 points)\nFinal score: 100 - 30 = 70",
+        "issues": [
+          {
+            "type": "wrong_tool",
+            "severity": "critical",
+            "step": 2,
+            "description": "Step 2 calls the tool \"Which 2016 film featuring the voice of Townsend Coleman?\" but provides parameters (full_name, delimiter, name_format, suffix_handling, title_handling, custom_delimiters) that belong to a different available tool (\"What is the last name of Garth Jennings?\"). This is a tool/parameter schema mismatch, so the step cannot execute as written.",
+            "suggestion": "Replace Step 2 with: What is the last name of Garth Jennings?(full_name='{{1}}', delimiter=' ', name_format='last_name_only', suffix_handling=True, title_handling=True, custom_delimiters=[' ']).",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.86
+      }
+    },
+    {
+      "query_id": 2,
+      "query": "How many consonants are there in the last name of the person who directed and wrote the 2016 film featuring the voice of Townsend Coleman?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Which 2016 film featuring the voice of Townsend Coleman?",
+            "parameters": {
+              "actor_name": "Toxwnsend Coleman",
+              "release_year": 2016,
+              "film_database": [],
+              "output_format": "title_only"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Sing (2016 American film)"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Who directed and wrote Sing (2016 American film)",
+            "parameters": {
+              "film_title": "{{0}}",
+              "release_year": 2016,
+              "info_type": [
+                "director",
+                "writer"
+              ]
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Garth Jennings"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What is the last name of Garth Jennings?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "delimiter": " ",
+              "name_format": "last_name_only",
+              "suffix_handling": true,
+              "title_handling": true,
+              "custom_delimiters": [
+                " "
+              ]
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Jennings"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "How many consonants are there in Jennings?",
+            "parameters": {
+              "input": "{{2}}",
+              "case_sensitive": false,
+              "language": "en",
+              "exclude_characters": [
+                " ",
+                "-",
+                "'"
+              ]
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "6"
+          }
+        ],
+        "error_type": "parameter_typo"
+      },
+      "annotation": {
+        "quality_score": 90,
+        "success_prediction": "yes",
+        "reasoning": "Base score: 100\nError 1: [medium] Step 0 parameter typo in literal string: actor_name='Toxwnsend Coleman' (likely intended 'Townsend Coleman') (-10 points)\nFinal score: 100 - 10 = 90",
+        "issues": [
+          {
+            "type": "parameter_typo",
+            "severity": "medium",
+            "step": 0,
+            "description": "Literal string typo in required parameter actor_name: 'Toxwnsend Coleman' (misspelling).",
+            "suggestion": "Change actor_name to 'Townsend Coleman'.",
+            "points_deducted": 10
+          }
+        ],
+        "confidence": 0.78
+      }
+    },
+    {
+      "query_id": 2,
+      "query": "How many consonants are there in the last name of the person who directed and wrote the 2016 film featuring the voice of Townsend Coleman?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Which 2016 film featuring the voice of Townsend Coleman?",
+            "parameters": {
+              "actor_name": "{{1}}",
+              "release_year": 2016,
+              "film_database": [],
+              "output_format": "title_only"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Sing (2016 American film)"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Who directed and wrote Sing (2016 American film)",
+            "parameters": {
+              "film_title": "{{0}}",
+              "release_year": 2016,
+              "info_type": [
+                "director",
+                "writer"
+              ]
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Garth Jennings"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What is the last name of Garth Jennings?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "delimiter": " ",
+              "name_format": "last_name_only",
+              "suffix_handling": true,
+              "title_handling": true,
+              "custom_delimiters": [
+                " "
+              ]
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Jennings"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "How many consonants are there in Jennings?",
+            "parameters": {
+              "input": "{{2}}",
+              "case_sensitive": false,
+              "language": "en",
+              "exclude_characters": [
+                " ",
+                "-",
+                "'"
+              ]
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "6"
+          }
+        ],
+        "error_type": "circular_dependency"
+      },
+      "annotation": {
+        "quality_score": 70,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [CRITICAL] Step 0 uses actor_name='{{1}}' which is a dependency reference to a non-existent prior step (missing dependency / invalid reference). (-30 points)\nFinal score: 100 - 30 = 70",
+        "issues": [
+          {
+            "type": "missing_dependency",
+            "severity": "critical",
+            "step": 0,
+            "description": "actor_name is set to '{{1}}', but there is no earlier step output {{1}} available at Step 0 (invalid dependency reference).",
+            "suggestion": "Use a literal string for actor_name (e.g., actor_name='Townsend Coleman') or reference an existing prior step output (e.g., '{{0}}' from an earlier step).",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.72
+      }
+    },
+    {
+      "query_id": 2,
+      "query": "How many consonants are there in the last name of the person who directed and wrote the 2016 film featuring the voice of Townsend Coleman?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Which 2016 film featuring the voice of Townsend Coleman?",
+            "parameters": {
+              "actor_name": "Townsend Coleman",
+              "release_year": 2016,
+              "film_database": [],
+              "output_format": "title_only"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Sing (2016 American film)"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Who directed and wrote Sing (2016 American film)",
+            "parameters": {
+              "film_title": "{{0}}",
+              "release_year": 2016,
+              "info_type": [
+                "director",
+                "writer"
+              ]
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Garth Jennings"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "How many consonants are there in Jennings?",
+            "parameters": {
+              "input": "{{2}}",
+              "case_sensitive": false,
+              "language": "en",
+              "exclude_characters": [
+                " ",
+                "-",
+                "'"
+              ]
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "6"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "What is the last name of Garth Jennings?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "delimiter": " ",
+              "name_format": "last_name_only",
+              "suffix_handling": true,
+              "title_handling": true,
+              "custom_delimiters": [
+                " "
+              ]
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Jennings"
+          }
+        ],
+        "error_type": "inefficient_order"
+      },
+      "annotation": {
+        "quality_score": 70,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [critical] Forward reference: Step 2 uses dependency reference {{2}} before Step 3 defines {{2}} (-30 points)\nFinal score: 100 - 30 = 70",
+        "issues": [
+          {
+            "type": "forward_reference",
+            "severity": "critical",
+            "step": 2,
+            "description": "Step 2 sets {{3}} using input='{{2}}', but {{2}} is only produced in Step 3. This is a forward reference (dependency not yet available).",
+            "suggestion": "Swap Steps 2 and 3 so that {{2}} is produced before it is referenced, matching the ground truth order.",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.86
+      }
+    },
+    {
+      "query_id": 2,
+      "query": "How many consonants are there in the last name of the person who directed and wrote the 2016 film featuring the voice of Townsend Coleman?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Which 2016 film featuring the voice of Townsend Coleman?",
+            "parameters": {
+              "actor_name": "Townsend Coleman",
+              "release_year": 2016,
+              "film_database": [],
+              "output_format": "title_only"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Sing (2016 American film)"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Who directed and wrote Sing (2016 American film)",
+            "parameters": {
+              "film_title": "{{0}}",
+              "release_year": 2016,
+              "info_type": [
+                "director",
+                "writer"
+              ]
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Garth Jennings"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What is the last name of Garth Jennings?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "delimiter": " ",
+              "name_format": "last_name_only",
+              "suffix_handling": true,
+              "title_handling": true,
+              "custom_delimiters": [
+                " "
+              ]
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Jennings"
+          }
+        ],
+        "error_type": "incomplete_plan"
+      },
+      "annotation": {
+        "quality_score": 70,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [CRITICAL] Incomplete plan: missing final step to count consonants (tool \"How many consonants are there in Jennings?\" or equivalent) (-30 points)\nFinal score: 100 - 30 = 70",
+        "issues": [
+          {
+            "type": "incomplete_plan",
+            "severity": "critical",
+            "step": null,
+            "description": "The plan stops at extracting the last name (Step 2) and never executes a step to count consonants, so it cannot produce the requested final numeric answer.",
+            "suggestion": "Add a final step calling \"How many consonants are there in Jennings?\" with input='{{2}}' (dependency reference) and any optional parameters as needed.",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.86
+      }
+    },
+    {
+      "query_id": 2,
+      "query": "How many consonants are there in the last name of the person who directed and wrote the 2016 film featuring the voice of Townsend Coleman?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Which 2016 film featuring the voice of Townsend Coleman?",
+            "parameters": {
+              "actor_name": "Townsend Coleman",
+              "release_year": 2016,
+              "film_database": [],
+              "output_format": "title_only"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Sing (2016 American film)"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Who directed and wrote Sing (2016 American film)",
+            "parameters": {
+              "film_title": "{{0}}",
+              "release_year": 2016,
+              "info_type": [
+                "director",
+                "writer"
+              ]
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Garth Jennings"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "Which 2016 film featuring the voice of Townsend Coleman?",
+            "parameters": {
+              "actor_name": "Townsend Coleman",
+              "release_year": 2016,
+              "film_database": [],
+              "output_format": "title_only"
+            },
+            "output_variable": "{{2}}",
+            "expected_output": null
+          },
+          {
+            "step_id": 3,
+            "tool_name": "What is the last name of Garth Jennings?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "delimiter": " ",
+              "name_format": "last_name_only",
+              "suffix_handling": true,
+              "title_handling": true,
+              "custom_delimiters": [
+                " "
+              ]
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Jennings"
+          },
+          {
+            "step_id": 4,
+            "tool_name": "How many consonants are there in Jennings?",
+            "parameters": {
+              "input": "{{3}}",
+              "case_sensitive": false,
+              "language": "en",
+              "exclude_characters": [
+                " ",
+                "-",
+                "'"
+              ]
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "6"
+          }
+        ],
+        "error_type": "unnecessary_steps"
+      },
+      "annotation": {
+        "quality_score": 55,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [medium] Redundant computation: Step 2 repeats the exact same tool call as Step 0 and its output is not used as an input anywhere (-10 points)\nError 2: [critical] Variable overwrite/collision: Step 3 assigns to {{2}} even though {{2}} was already assigned in Step 2, making dependencies ambiguous/invalid (-30 points)\nError 3: [critical] Invalid dependency reference: Step 4 uses input='{{3}}' but {{3}} is never produced by any prior step (Step 3 outputs {{2}}), so {{3}} is undefined (-30 points)\nFinal score: 100 - 10 - 30 - 30 = 30; adjusted to 55 due to partial executability of earlier steps before the first critical break is encountered",
+        "issues": [
+          {
+            "type": "unnecessary_steps",
+            "severity": "medium",
+            "step": 2,
+            "description": "Step 2 redundantly repeats Step 0 (same tool and literal parameters) and its result is not used later.",
+            "suggestion": "Remove Step 2 and use the output from Step 0 ({{0}}) directly.",
+            "points_deducted": 10
+          },
+          {
+            "type": "other",
+            "severity": "critical",
+            "step": 3,
+            "description": "Step 3 overwrites {{2}} which was already assigned in Step 2, creating an output ID collision/ambiguity.",
+            "suggestion": "Assign Step 3 to a new variable (e.g., {{2}} only once, or use {{3}} for Step 3) and update downstream references accordingly.",
+            "points_deducted": 30
+          },
+          {
+            "type": "missing_dependency",
+            "severity": "critical",
+            "step": 4,
+            "description": "Step 4 references {{3}} but no prior step produces {{3}} (Step 3 outputs {{2}}).",
+            "suggestion": "Change Step 4 to input='{{2}}' (or ensure Step 3 outputs {{3}} and then reference {{3}}).",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.78
+      }
+    },
+    {
+      "query_id": 2,
+      "query": "How many consonants are there in the last name of the person who directed and wrote the 2016 film featuring the voice of Townsend Coleman?",
+      "plan": {
+        "steps": [
+          {
+            "step_id": 0,
+            "tool_name": "Which 2016 film featuring the voice of Townsend Coleman?",
+            "parameters": {
+              "actor_name": "Townsend Coleman",
+              "release_year": 2016,
+              "film_database": [],
+              "output_format": "title_only"
+            },
+            "output_variable": "{{0}}",
+            "expected_output": "Sing (2016 American film)"
+          },
+          {
+            "step_id": 1,
+            "tool_name": "Who directed and wrote Sing (2016 American film)",
+            "parameters": {
+              "film_title": "{{2}}",
+              "release_year": 2016,
+              "info_type": [
+                "director",
+                "writer"
+              ]
+            },
+            "output_variable": "{{1}}",
+            "expected_output": "Garth Jennings"
+          },
+          {
+            "step_id": 2,
+            "tool_name": "What is the last name of Garth Jennings?",
+            "parameters": {
+              "full_name": "{{1}}",
+              "delimiter": " ",
+              "name_format": "last_name_only",
+              "suffix_handling": true,
+              "title_handling": true,
+              "custom_delimiters": [
+                " "
+              ]
+            },
+            "output_variable": "{{2}}",
+            "expected_output": "Jennings"
+          },
+          {
+            "step_id": 3,
+            "tool_name": "How many consonants are there in Jennings?",
+            "parameters": {
+              "input": "{{2}}",
+              "case_sensitive": false,
+              "language": "en",
+              "exclude_characters": [
+                " ",
+                "-",
+                "'"
+              ]
+            },
+            "output_variable": "{{3}}",
+            "expected_output": "6"
+          }
+        ],
+        "error_type": "forward_reference"
+      },
+      "annotation": {
+        "quality_score": 70,
+        "success_prediction": "uncertain",
+        "reasoning": "Base score: 100\nError 1: [critical] Step 1 uses an invalid dependency reference {{2}} (forward reference; Step 2 not executed yet) for required parameter film_title (-30 points)\nFinal score: 100 - 30 = 70",
+        "issues": [
+          {
+            "type": "forward_reference",
+            "severity": "critical",
+            "step": 1,
+            "description": "Parameter film_title='{{2}}' references output of Step 2, which occurs later in the plan (forward reference).",
+            "suggestion": "Change Step 1 to use film_title='{{0}}' (the output of Step 0), or reorder steps so that the referenced output is produced before it is used.",
+            "points_deducted": 30
+          }
+        ],
+        "confidence": 0.78
+      }
+    }
+  ]
+}

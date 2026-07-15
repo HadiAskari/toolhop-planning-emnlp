@@ -1,0 +1,497 @@
+{
+  "config": {
+    "dataset": "nestful",
+    "n": 50,
+    "seed": 7,
+    "splits": [
+      "test",
+      "val"
+    ],
+    "repo_root": null,
+    "outdir": null
+  },
+  "items": [
+    {
+      "item_id": "nestful_000",
+      "qid": 173,
+      "error_type": "parameter_typo",
+      "gpt_score": 100,
+      "gpt_acceptable": "yes",
+      "gpt_issues": []
+    },
+    {
+      "item_id": "nestful_001",
+      "qid": 40,
+      "error_type": "parameter_typo",
+      "gpt_score": 80,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "parameter_typo"
+      ]
+    },
+    {
+      "item_id": "nestful_002",
+      "qid": 120,
+      "error_type": "parameter_typo",
+      "gpt_score": 80,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "other"
+      ]
+    },
+    {
+      "item_id": "nestful_003",
+      "qid": 427,
+      "error_type": "type_mismatch",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "type_mismatch"
+      ]
+    },
+    {
+      "item_id": "nestful_004",
+      "qid": 120,
+      "error_type": "unnecessary_steps",
+      "gpt_score": 90,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "unnecessary_steps"
+      ]
+    },
+    {
+      "item_id": "nestful_005",
+      "qid": 76,
+      "error_type": "forward_reference",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "nestful_006",
+      "qid": 2900,
+      "error_type": "unnecessary_steps",
+      "gpt_score": 80,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "unnecessary_steps",
+        "unnecessary_steps"
+      ]
+    },
+    {
+      "item_id": "nestful_007",
+      "qid": 2900,
+      "error_type": "none",
+      "gpt_score": 100,
+      "gpt_acceptable": "yes",
+      "gpt_issues": []
+    },
+    {
+      "item_id": "nestful_008",
+      "qid": 2900,
+      "error_type": "wrong_tool",
+      "gpt_score": 100,
+      "gpt_acceptable": "yes",
+      "gpt_issues": []
+    },
+    {
+      "item_id": "nestful_009",
+      "qid": 173,
+      "error_type": "circular_dependency",
+      "gpt_score": 100,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "nestful_010",
+      "qid": 40,
+      "error_type": "missing_dependency",
+      "gpt_score": 80,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "missing_dependency"
+      ]
+    },
+    {
+      "item_id": "nestful_011",
+      "qid": 40,
+      "error_type": "incomplete_plan",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "incomplete_plan"
+      ]
+    },
+    {
+      "item_id": "nestful_012",
+      "qid": 120,
+      "error_type": "missing_dependency",
+      "gpt_score": 50,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "type_mismatch",
+        "missing_dependency"
+      ]
+    },
+    {
+      "item_id": "nestful_013",
+      "qid": 40,
+      "error_type": "inefficient_order",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "nestful_014",
+      "qid": 427,
+      "error_type": "unnecessary_steps",
+      "gpt_score": 90,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "unnecessary_steps"
+      ]
+    },
+    {
+      "item_id": "nestful_015",
+      "qid": 2900,
+      "error_type": "circular_dependency",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "nestful_016",
+      "qid": 76,
+      "error_type": "inefficient_order",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "nestful_017",
+      "qid": 120,
+      "error_type": "wrong_tool",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "other"
+      ]
+    },
+    {
+      "item_id": "nestful_018",
+      "qid": 427,
+      "error_type": "circular_dependency",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "nestful_019",
+      "qid": 427,
+      "error_type": "missing_dependency",
+      "gpt_score": 80,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "missing_dependency"
+      ]
+    },
+    {
+      "item_id": "nestful_020",
+      "qid": 40,
+      "error_type": "circular_dependency",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "nestful_021",
+      "qid": 40,
+      "error_type": "none",
+      "gpt_score": 100,
+      "gpt_acceptable": "yes",
+      "gpt_issues": []
+    },
+    {
+      "item_id": "nestful_022",
+      "qid": 40,
+      "error_type": "forward_reference",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "nestful_023",
+      "qid": 40,
+      "error_type": "wrong_tool",
+      "gpt_score": 100,
+      "gpt_acceptable": "yes",
+      "gpt_issues": []
+    },
+    {
+      "item_id": "nestful_024",
+      "qid": 2900,
+      "error_type": "missing_dependency",
+      "gpt_score": 80,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "missing_dependency"
+      ]
+    },
+    {
+      "item_id": "nestful_025",
+      "qid": 173,
+      "error_type": "wrong_tool",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "other"
+      ]
+    },
+    {
+      "item_id": "nestful_026",
+      "qid": 2900,
+      "error_type": "inefficient_order",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "nestful_027",
+      "qid": 2900,
+      "error_type": "parameter_typo",
+      "gpt_score": 100,
+      "gpt_acceptable": "yes",
+      "gpt_issues": []
+    },
+    {
+      "item_id": "nestful_028",
+      "qid": 173,
+      "error_type": "none",
+      "gpt_score": 100,
+      "gpt_acceptable": "yes",
+      "gpt_issues": []
+    },
+    {
+      "item_id": "nestful_029",
+      "qid": 120,
+      "error_type": "type_mismatch",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "type_mismatch"
+      ]
+    },
+    {
+      "item_id": "nestful_030",
+      "qid": 173,
+      "error_type": "unnecessary_steps",
+      "gpt_score": 90,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "unnecessary_steps"
+      ]
+    },
+    {
+      "item_id": "nestful_031",
+      "qid": 427,
+      "error_type": "wrong_tool",
+      "gpt_score": 100,
+      "gpt_acceptable": "yes",
+      "gpt_issues": []
+    },
+    {
+      "item_id": "nestful_032",
+      "qid": 2900,
+      "error_type": "forward_reference",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "nestful_033",
+      "qid": 173,
+      "error_type": "type_mismatch",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "type_mismatch"
+      ]
+    },
+    {
+      "item_id": "nestful_034",
+      "qid": 40,
+      "error_type": "unnecessary_steps",
+      "gpt_score": 90,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "unnecessary_steps"
+      ]
+    },
+    {
+      "item_id": "nestful_035",
+      "qid": 173,
+      "error_type": "incomplete_plan",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "incomplete_plan"
+      ]
+    },
+    {
+      "item_id": "nestful_036",
+      "qid": 1313,
+      "error_type": "inefficient_order",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "nestful_037",
+      "qid": 427,
+      "error_type": "parameter_typo",
+      "gpt_score": 80,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "other"
+      ]
+    },
+    {
+      "item_id": "nestful_038",
+      "qid": 120,
+      "error_type": "none",
+      "gpt_score": 100,
+      "gpt_acceptable": "yes",
+      "gpt_issues": []
+    },
+    {
+      "item_id": "nestful_039",
+      "qid": 427,
+      "error_type": "incomplete_plan",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "incomplete_plan"
+      ]
+    },
+    {
+      "item_id": "nestful_040",
+      "qid": 40,
+      "error_type": "type_mismatch",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "type_mismatch"
+      ]
+    },
+    {
+      "item_id": "nestful_041",
+      "qid": 2900,
+      "error_type": "incomplete_plan",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "incomplete_plan"
+      ]
+    },
+    {
+      "item_id": "nestful_042",
+      "qid": 173,
+      "error_type": "inefficient_order",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "nestful_043",
+      "qid": 173,
+      "error_type": "forward_reference",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "nestful_044",
+      "qid": 1313,
+      "error_type": "forward_reference",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "nestful_045",
+      "qid": 2900,
+      "error_type": "type_mismatch",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "type_mismatch"
+      ]
+    },
+    {
+      "item_id": "nestful_046",
+      "qid": 427,
+      "error_type": "none",
+      "gpt_score": 100,
+      "gpt_acceptable": "yes",
+      "gpt_issues": []
+    },
+    {
+      "item_id": "nestful_047",
+      "qid": 120,
+      "error_type": "incomplete_plan",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "incomplete_plan"
+      ]
+    },
+    {
+      "item_id": "nestful_048",
+      "qid": 173,
+      "error_type": "missing_dependency",
+      "gpt_score": 80,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "missing_dependency"
+      ]
+    },
+    {
+      "item_id": "nestful_049",
+      "qid": 120,
+      "error_type": "circular_dependency",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    }
+  ]
+}

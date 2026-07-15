@@ -1,0 +1,6 @@
+{
+  "dataset": "nestful",
+  "n_test_queries": 180,
+  "n_test_examples": 1800,
+  "test_split_saved": "models/judge-nestful/test_split.json"
+}

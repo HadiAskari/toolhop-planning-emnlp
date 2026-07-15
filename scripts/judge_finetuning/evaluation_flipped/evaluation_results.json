@@ -1,0 +1,26 @@
+{
+  "quality_score_mae": 66.13333333333334,
+  "quality_score_rmse": 68.05553287981482,
+  "quality_score_correlation": -0.010982017764330238,
+  "success_prediction_accuracy": 0.673469387755102,
+  "success_prediction_f1": 0.9966442953020134,
+  "success_prediction_precision": 1.0,
+  "success_prediction_recall": 0.9933110367892977,
+  "mae_by_error_type": {
+    "none": 82.06666666666666,
+    "type_mismatch": 54.13333333333333,
+    "missing_dependency": 62.2
+  },
+  "accuracy_by_error_type": {
+    "none": 0.006666666666666667,
+    "type_mismatch": 0.013333333333333334,
+    "missing_dependency": 0.006666666666666667
+  },
+  "expected_calibration_error": 0.7849777777777778,
+  "issue_detection_precision": 0.0,
+  "issue_detection_recall": 0.0,
+  "issue_detection_f1": 0.0,
+  "n_samples": 450,
+  "n_correct_predictions": 297,
+  "n_total_predictions": 441
+}

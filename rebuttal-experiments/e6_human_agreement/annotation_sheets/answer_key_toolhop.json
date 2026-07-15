@@ -1,0 +1,516 @@
+{
+  "config": {
+    "dataset": "toolhop",
+    "n": 50,
+    "seed": 7,
+    "splits": [
+      "test",
+      "val"
+    ],
+    "repo_root": null,
+    "outdir": null
+  },
+  "items": [
+    {
+      "item_id": "toolhop_000",
+      "qid": 300,
+      "error_type": "unnecessary_steps",
+      "gpt_score": 40,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "other",
+        "missing_dependency"
+      ]
+    },
+    {
+      "item_id": "toolhop_001",
+      "qid": 453,
+      "error_type": "wrong_tool",
+      "gpt_score": 40,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "other",
+        "other"
+      ]
+    },
+    {
+      "item_id": "toolhop_002",
+      "qid": 41,
+      "error_type": "unnecessary_steps",
+      "gpt_score": 30,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "other",
+        "circular_dependency",
+        "forward_reference",
+        "unnecessary_steps"
+      ]
+    },
+    {
+      "item_id": "toolhop_003",
+      "qid": 779,
+      "error_type": "wrong_tool",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "other"
+      ]
+    },
+    {
+      "item_id": "toolhop_004",
+      "qid": 779,
+      "error_type": "forward_reference",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "toolhop_005",
+      "qid": 491,
+      "error_type": "forward_reference",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "toolhop_006",
+      "qid": 491,
+      "error_type": "inefficient_order",
+      "gpt_score": 90,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "inefficient_order"
+      ]
+    },
+    {
+      "item_id": "toolhop_007",
+      "qid": 491,
+      "error_type": "circular_dependency",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "toolhop_008",
+      "qid": 453,
+      "error_type": "unnecessary_steps",
+      "gpt_score": 85,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "unnecessary_steps",
+        "other",
+        "inefficient_order"
+      ]
+    },
+    {
+      "item_id": "toolhop_009",
+      "qid": 300,
+      "error_type": "circular_dependency",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "toolhop_010",
+      "qid": 491,
+      "error_type": "missing_dependency",
+      "gpt_score": 80,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "missing_dependency"
+      ]
+    },
+    {
+      "item_id": "toolhop_011",
+      "qid": 491,
+      "error_type": "wrong_tool",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "other"
+      ]
+    },
+    {
+      "item_id": "toolhop_012",
+      "qid": 41,
+      "error_type": "parameter_typo",
+      "gpt_score": 90,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "parameter_typo"
+      ]
+    },
+    {
+      "item_id": "toolhop_013",
+      "qid": 300,
+      "error_type": "parameter_typo",
+      "gpt_score": 90,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "parameter_typo"
+      ]
+    },
+    {
+      "item_id": "toolhop_014",
+      "qid": 41,
+      "error_type": "circular_dependency",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "toolhop_015",
+      "qid": 41,
+      "error_type": "missing_dependency",
+      "gpt_score": 50,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "type_mismatch",
+        "missing_dependency"
+      ]
+    },
+    {
+      "item_id": "toolhop_016",
+      "qid": 41,
+      "error_type": "forward_reference",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "toolhop_017",
+      "qid": 300,
+      "error_type": "none",
+      "gpt_score": 100,
+      "gpt_acceptable": "yes",
+      "gpt_issues": []
+    },
+    {
+      "item_id": "toolhop_018",
+      "qid": 491,
+      "error_type": "incomplete_plan",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "incomplete_plan"
+      ]
+    },
+    {
+      "item_id": "toolhop_019",
+      "qid": 300,
+      "error_type": "type_mismatch",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "type_mismatch"
+      ]
+    },
+    {
+      "item_id": "toolhop_020",
+      "qid": 453,
+      "error_type": "circular_dependency",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "toolhop_021",
+      "qid": 453,
+      "error_type": "type_mismatch",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "type_mismatch"
+      ]
+    },
+    {
+      "item_id": "toolhop_022",
+      "qid": 300,
+      "error_type": "missing_dependency",
+      "gpt_score": 80,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "missing_dependency"
+      ]
+    },
+    {
+      "item_id": "toolhop_023",
+      "qid": 300,
+      "error_type": "incomplete_plan",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "incomplete_plan"
+      ]
+    },
+    {
+      "item_id": "toolhop_024",
+      "qid": 453,
+      "error_type": "none",
+      "gpt_score": 100,
+      "gpt_acceptable": "yes",
+      "gpt_issues": []
+    },
+    {
+      "item_id": "toolhop_025",
+      "qid": 491,
+      "error_type": "unnecessary_steps",
+      "gpt_score": 90,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "unnecessary_steps"
+      ]
+    },
+    {
+      "item_id": "toolhop_026",
+      "qid": 491,
+      "error_type": "none",
+      "gpt_score": 100,
+      "gpt_acceptable": "yes",
+      "gpt_issues": []
+    },
+    {
+      "item_id": "toolhop_027",
+      "qid": 453,
+      "error_type": "incomplete_plan",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "incomplete_plan"
+      ]
+    },
+    {
+      "item_id": "toolhop_028",
+      "qid": 779,
+      "error_type": "circular_dependency",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "toolhop_029",
+      "qid": 300,
+      "error_type": "wrong_tool",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "wrong_tool"
+      ]
+    },
+    {
+      "item_id": "toolhop_030",
+      "qid": 779,
+      "error_type": "missing_dependency",
+      "gpt_score": 80,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "missing_dependency"
+      ]
+    },
+    {
+      "item_id": "toolhop_031",
+      "qid": 41,
+      "error_type": "inefficient_order",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "toolhop_032",
+      "qid": 453,
+      "error_type": "inefficient_order",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "toolhop_033",
+      "qid": 491,
+      "error_type": "type_mismatch",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "type_mismatch"
+      ]
+    },
+    {
+      "item_id": "toolhop_034",
+      "qid": 300,
+      "error_type": "inefficient_order",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "toolhop_035",
+      "qid": 300,
+      "error_type": "forward_reference",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "toolhop_036",
+      "qid": 491,
+      "error_type": "parameter_typo",
+      "gpt_score": 90,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "parameter_typo"
+      ]
+    },
+    {
+      "item_id": "toolhop_037",
+      "qid": 41,
+      "error_type": "wrong_tool",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "other"
+      ]
+    },
+    {
+      "item_id": "toolhop_038",
+      "qid": 453,
+      "error_type": "forward_reference",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "toolhop_039",
+      "qid": 779,
+      "error_type": "parameter_typo",
+      "gpt_score": 90,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "parameter_typo"
+      ]
+    },
+    {
+      "item_id": "toolhop_040",
+      "qid": 779,
+      "error_type": "unnecessary_steps",
+      "gpt_score": 30,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "other",
+        "circular_dependency",
+        "missing_dependency",
+        "unnecessary_steps"
+      ]
+    },
+    {
+      "item_id": "toolhop_041",
+      "qid": 453,
+      "error_type": "missing_dependency",
+      "gpt_score": 80,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "missing_dependency"
+      ]
+    },
+    {
+      "item_id": "toolhop_042",
+      "qid": 779,
+      "error_type": "none",
+      "gpt_score": 100,
+      "gpt_acceptable": "yes",
+      "gpt_issues": []
+    },
+    {
+      "item_id": "toolhop_043",
+      "qid": 41,
+      "error_type": "none",
+      "gpt_score": 100,
+      "gpt_acceptable": "yes",
+      "gpt_issues": []
+    },
+    {
+      "item_id": "toolhop_044",
+      "qid": 779,
+      "error_type": "incomplete_plan",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "incomplete_plan"
+      ]
+    },
+    {
+      "item_id": "toolhop_045",
+      "qid": 453,
+      "error_type": "parameter_typo",
+      "gpt_score": 90,
+      "gpt_acceptable": "yes",
+      "gpt_issues": [
+        "parameter_typo"
+      ]
+    },
+    {
+      "item_id": "toolhop_046",
+      "qid": 41,
+      "error_type": "type_mismatch",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "type_mismatch"
+      ]
+    },
+    {
+      "item_id": "toolhop_047",
+      "qid": 779,
+      "error_type": "inefficient_order",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "forward_reference"
+      ]
+    },
+    {
+      "item_id": "toolhop_048",
+      "qid": 779,
+      "error_type": "type_mismatch",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "type_mismatch"
+      ]
+    },
+    {
+      "item_id": "toolhop_049",
+      "qid": 41,
+      "error_type": "incomplete_plan",
+      "gpt_score": 70,
+      "gpt_acceptable": "no",
+      "gpt_issues": [
+        "incomplete_plan"
+      ]
+    }
+  ]
+}

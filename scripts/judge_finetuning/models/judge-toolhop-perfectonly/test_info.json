@@ -1,0 +1,7 @@
+{
+  "dataset": "toolhop",
+  "perfect_only": true,
+  "n_test_queries": 100,
+  "n_test_examples": 1000,
+  "test_split_saved": "models/judge-toolhop-perfectonly/test_split.json"
+}

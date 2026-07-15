@@ -1,0 +1,36 @@
+# FORTE — core Python dependencies
+# (Curated from the actual imports; versions reflect the environment used for
+#  the reported experiments. A full `pip freeze` is intentionally not shipped
+#  because it contained machine-local wheel paths.)
+#
+# NOTE: `verl` (the RL training framework) and a matching `vllm` build are
+# installed separately from source — see README "Installation". Getting a
+# consistent torch / vllm / verl CUDA stack is the only non-trivial step.
+
+# --- core ML / training ---
+torch==2.6.0            # built against CUDA 12.6 in our runs (torch==2.6.0+cu126)
+transformers==4.51.1
+accelerate==1.11.0
+peft==0.17.1
+datasets==4.2.0
+bitsandbytes>=0.43
+
+# --- inference / serving (judge + planner vLLM servers) ---
+vllm>=0.8
+flask>=3.0             # judge_server.py
+aiohttp>=3.11
+requests>=2.32
+
+# --- data / numerics ---
+numpy>=2.2
+pandas>=2.3
+pyarrow>=17            # parquet RL data
+scipy>=1.15
+scikit-learn>=1.5      # agreement / AUC stats
+
+# --- annotation ---
+openai>=1.40           # GPT rubric annotation (nestful_annotator.py, E3)
+
+# --- utils / plotting ---
+tqdm>=4.67
+matplotlib>=3.8

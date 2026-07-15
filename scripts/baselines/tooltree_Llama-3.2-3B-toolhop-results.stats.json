@@ -1,0 +1,206 @@
+{
+  "config": {
+    "planner_model": "meta-llama/Llama-3.2-3B-Instruct",
+    "device": "cuda:0",
+    "test_parquet": "${FORTE_ROOT}/planner_rl/data/verl_rl_full_clean/test.parquet",
+    "perfect_only": false,
+    "full": true,
+    "limit": null,
+    "max_rollouts": 10,
+    "lambda_uct": 1.4,
+    "tau_pre": 0.3,
+    "tau_post": 0.0,
+    "n_candidates": 2,
+    "max_depth": 6,
+    "early_stop_patience": 5,
+    "early_stop_delta": 0.01,
+    "candidate_temperature": 0.7,
+    "num_workers": 4,
+    "judge_concurrency": 4,
+    "judge_max_tokens": 200,
+    "judge_max_tokens_final": 300,
+    "judge_url": "http://localhost:8003/v1/chat/completions",
+    "output": "tooltree_Llama-3.2-3B-toolhop-results.json",
+    "stats_output": null,
+    "return_tree_meta": false
+  },
+  "runs": {
+    "full": {
+      "label": "FULL TEST SET  ToolTree",
+      "method": "ToolTree (offline)",
+      "n_examples": 1000,
+      "gt_uses_nl_tools": false,
+      "judge_full_parse_rate": 0.75,
+      "empty_plan_rate": 0.225,
+      "tree_stats": {
+        "mean_rollouts_used": 6.19,
+        "mean_tree_size": 8.01,
+        "mean_best_leaf_depth": 2.06
+      },
+      "accuracy": {
+        "judge_success_rate": 0.024,
+        "error_handled_rate": 0.451
+      },
+      "judge_scores": {
+        "mean": 47.72,
+        "median": 70.0,
+        "std": 33.37,
+        "pct_gte_80": 2.4,
+        "pct_eq_100": 0.6
+      },
+      "structural": {
+        "exact_match_rate": 0.0,
+        "functional_match_rate": 0.046,
+        "param_only_match_rate": 0.152,
+        "step_count_match_rate": 0.253,
+        "mean_functional_tool_acc": 0.288,
+        "mean_param_accuracy": 0.208,
+        "mean_dependency_accuracy": 0.536
+      },
+      "success_prediction_dist": {
+        "yes": {
+          "count": 22,
+          "pct": 2.2
+        },
+        "likely_yes": {
+          "count": 0,
+          "pct": 0.0
+        },
+        "uncertain": {
+          "count": 652,
+          "pct": 65.2
+        },
+        "likely_no": {
+          "count": 0,
+          "pct": 0.0
+        },
+        "no": {
+          "count": 326,
+          "pct": 32.6
+        }
+      },
+      "per_error_type": {
+        "circular_dependency": {
+          "n": 100,
+          "judge_success_rate": 0.03,
+          "error_type_handled_rate": 0.73,
+          "mean_judge_score": 51.8,
+          "functional_tool_acc": 0.29908266666666666,
+          "mean_param_accuracy": 0.21367635984586447,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.06,
+          "param_only_match_rate": 0.16,
+          "step_count_match_rate": 0.27
+        },
+        "forward_reference": {
+          "n": 100,
+          "judge_success_rate": 0.04,
+          "error_type_handled_rate": 0.74,
+          "mean_judge_score": 52.6,
+          "functional_tool_acc": 0.30619028571428575,
+          "mean_param_accuracy": 0.22085230000477676,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.05,
+          "param_only_match_rate": 0.18,
+          "step_count_match_rate": 0.22
+        },
+        "incomplete_plan": {
+          "n": 100,
+          "judge_success_rate": 0.01,
+          "error_type_handled_rate": 0.63,
+          "mean_judge_score": 44.3,
+          "functional_tool_acc": 0.2831807142857143,
+          "mean_param_accuracy": 0.19715348368521746,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.04,
+          "param_only_match_rate": 0.1,
+          "step_count_match_rate": 0.23
+        },
+        "inefficient_order": {
+          "n": 100,
+          "judge_success_rate": 0.04,
+          "error_type_handled_rate": 0.62,
+          "mean_judge_score": 48.6,
+          "functional_tool_acc": 0.30529285714285714,
+          "mean_param_accuracy": 0.2374083635233016,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.05,
+          "param_only_match_rate": 0.19,
+          "step_count_match_rate": 0.29
+        },
+        "missing_dependency": {
+          "n": 100,
+          "judge_success_rate": 0.02,
+          "error_type_handled_rate": 0.04,
+          "mean_judge_score": 43.9,
+          "functional_tool_acc": 0.2855061190476191,
+          "mean_param_accuracy": 0.21994221931319455,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.05,
+          "param_only_match_rate": 0.17,
+          "step_count_match_rate": 0.21
+        },
+        "none": {
+          "n": 100,
+          "judge_success_rate": 0.01,
+          "error_type_handled_rate": 0.02,
+          "mean_judge_score": 46.4,
+          "functional_tool_acc": 0.2608539285714286,
+          "mean_param_accuracy": 0.16668671674902322,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.04,
+          "param_only_match_rate": 0.1,
+          "step_count_match_rate": 0.18
+        },
+        "parameter_typo": {
+          "n": 100,
+          "judge_success_rate": 0.02,
+          "error_type_handled_rate": 0.02,
+          "mean_judge_score": 46.6,
+          "functional_tool_acc": 0.2925254047619047,
+          "mean_param_accuracy": 0.20053084204685695,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.04,
+          "param_only_match_rate": 0.14,
+          "step_count_match_rate": 0.32
+        },
+        "type_mismatch": {
+          "n": 100,
+          "judge_success_rate": 0.03,
+          "error_type_handled_rate": 0.51,
+          "mean_judge_score": 42.0,
+          "functional_tool_acc": 0.23599845238095238,
+          "mean_param_accuracy": 0.19759710293146823,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.02,
+          "param_only_match_rate": 0.13,
+          "step_count_match_rate": 0.2
+        },
+        "unnecessary_steps": {
+          "n": 100,
+          "judge_success_rate": 0.01,
+          "error_type_handled_rate": 0.51,
+          "mean_judge_score": 52.0,
+          "functional_tool_acc": 0.30270654761904764,
+          "mean_param_accuracy": 0.21594905923110252,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.05,
+          "param_only_match_rate": 0.14,
+          "step_count_match_rate": 0.31
+        },
+        "wrong_tool": {
+          "n": 100,
+          "judge_success_rate": 0.03,
+          "error_type_handled_rate": 0.69,
+          "mean_judge_score": 49.0,
+          "functional_tool_acc": 0.30817142857142854,
+          "mean_param_accuracy": 0.21320224817322342,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.06,
+          "param_only_match_rate": 0.21,
+          "step_count_match_rate": 0.3
+        }
+      }
+    }
+  }
+}

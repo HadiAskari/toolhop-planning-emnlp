@@ -1,0 +1,202 @@
+{
+  "config": {
+    "model": "${FORTE_ROOT}/planner_rl/checkpoints_grpo_3b_nestful/global_step_45/actor",
+    "device": "cuda:0",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_device": "cpu",
+    "n_clusters": null,
+    "max_new_tokens": 512,
+    "judge_max_tokens": 300,
+    "revision_threshold": 60,
+    "no_revision": false,
+    "test_parquet": "${FORTE_ROOT}/planner_rl/data/verl_rl_nestful_full/test.parquet",
+    "perfect_only": false,
+    "full": true,
+    "limit": null,
+    "output": "qwen3b/tool_planner_qwen-3B-results.json",
+    "stats_output": null,
+    "return_raw": false,
+    "judge_url": "http://localhost:8002/v1/chat/completions",
+    "dataset": "auto"
+  },
+  "runs": {
+    "full": {
+      "label": "FULL TEST SET  Tool-Planner \u2014 NESTFUL",
+      "dataset": "nestful",
+      "method": "Tool-Planner (offline)",
+      "n_examples": 1800,
+      "gt_uses_nl_tools": false,
+      "judge_full_parse_rate": 0.993,
+      "empty_plan_rate": 0.889,
+      "revision_rate": 0.0,
+      "toolkit_stats": {
+        "mean_tools_per_query": 11.05,
+        "mean_toolkits_per_query": 3.41
+      },
+      "accuracy": {
+        "judge_success_rate": 0.845,
+        "error_handled_rate": 0.918
+      },
+      "judge_scores": {
+        "mean": 94.58,
+        "median": 100.0,
+        "std": 11.18,
+        "pct_gte_80": 84.5,
+        "pct_eq_100": 80.4
+      },
+      "structural": {
+        "exact_match_rate": 0.083,
+        "functional_match_rate": 0.089,
+        "param_only_match_rate": 0.1,
+        "step_count_match_rate": 0.094,
+        "mean_functional_tool_acc": 0.103,
+        "mean_param_accuracy": 0.098,
+        "mean_dependency_accuracy": 0.108
+      },
+      "success_prediction_dist": {
+        "yes": {
+          "count": 1457,
+          "pct": 80.9
+        },
+        "likely_yes": {
+          "count": 64,
+          "pct": 3.6
+        },
+        "uncertain": {
+          "count": 279,
+          "pct": 15.5
+        },
+        "likely_no": {
+          "count": 0,
+          "pct": 0.0
+        },
+        "no": {
+          "count": 0,
+          "pct": 0.0
+        }
+      },
+      "per_error_type": {
+        "circular_dependency": {
+          "n": 180,
+          "judge_success_rate": 0.8444444444444444,
+          "error_type_handled_rate": 0.9944444444444445,
+          "mean_judge_score": 94.5,
+          "functional_tool_acc": 0.10277777777777777,
+          "mean_param_accuracy": 0.0976851851851852,
+          "exact_match_rate": 0.08333333333333333,
+          "functional_match_rate": 0.08888888888888889,
+          "param_only_match_rate": 0.1,
+          "step_count_match_rate": 0.09444444444444444
+        },
+        "forward_reference": {
+          "n": 180,
+          "judge_success_rate": 0.8444444444444444,
+          "error_type_handled_rate": 0.9444444444444444,
+          "mean_judge_score": 94.5,
+          "functional_tool_acc": 0.10277777777777777,
+          "mean_param_accuracy": 0.0976851851851852,
+          "exact_match_rate": 0.08333333333333333,
+          "functional_match_rate": 0.08888888888888889,
+          "param_only_match_rate": 0.1,
+          "step_count_match_rate": 0.09444444444444444
+        },
+        "incomplete_plan": {
+          "n": 180,
+          "judge_success_rate": 0.85,
+          "error_type_handled_rate": 1.0,
+          "mean_judge_score": 94.66666666666667,
+          "functional_tool_acc": 0.10277777777777777,
+          "mean_param_accuracy": 0.0976851851851852,
+          "exact_match_rate": 0.08333333333333333,
+          "functional_match_rate": 0.08888888888888889,
+          "param_only_match_rate": 0.1,
+          "step_count_match_rate": 0.09444444444444444
+        },
+        "inefficient_order": {
+          "n": 180,
+          "judge_success_rate": 0.8444444444444444,
+          "error_type_handled_rate": 0.95,
+          "mean_judge_score": 94.61111111111111,
+          "functional_tool_acc": 0.10277777777777777,
+          "mean_param_accuracy": 0.0976851851851852,
+          "exact_match_rate": 0.08333333333333333,
+          "functional_match_rate": 0.08888888888888889,
+          "param_only_match_rate": 0.1,
+          "step_count_match_rate": 0.09444444444444444
+        },
+        "missing_dependency": {
+          "n": 180,
+          "judge_success_rate": 0.8555555555555555,
+          "error_type_handled_rate": 0.8777777777777778,
+          "mean_judge_score": 94.83333333333333,
+          "functional_tool_acc": 0.10277777777777777,
+          "mean_param_accuracy": 0.0976851851851852,
+          "exact_match_rate": 0.08333333333333333,
+          "functional_match_rate": 0.08888888888888889,
+          "param_only_match_rate": 0.1,
+          "step_count_match_rate": 0.09444444444444444
+        },
+        "none": {
+          "n": 180,
+          "judge_success_rate": 0.85,
+          "error_type_handled_rate": 0.8444444444444444,
+          "mean_judge_score": 94.77777777777777,
+          "functional_tool_acc": 0.10277777777777777,
+          "mean_param_accuracy": 0.0976851851851852,
+          "exact_match_rate": 0.08333333333333333,
+          "functional_match_rate": 0.08888888888888889,
+          "param_only_match_rate": 0.1,
+          "step_count_match_rate": 0.09444444444444444
+        },
+        "parameter_typo": {
+          "n": 180,
+          "judge_success_rate": 0.8444444444444444,
+          "error_type_handled_rate": 0.8222222222222222,
+          "mean_judge_score": 94.61111111111111,
+          "functional_tool_acc": 0.10277777777777777,
+          "mean_param_accuracy": 0.0976851851851852,
+          "exact_match_rate": 0.08333333333333333,
+          "functional_match_rate": 0.08888888888888889,
+          "param_only_match_rate": 0.1,
+          "step_count_match_rate": 0.09444444444444444
+        },
+        "type_mismatch": {
+          "n": 180,
+          "judge_success_rate": 0.8222222222222222,
+          "error_type_handled_rate": 0.9944444444444445,
+          "mean_judge_score": 94.05555555555556,
+          "functional_tool_acc": 0.10277777777777777,
+          "mean_param_accuracy": 0.0976851851851852,
+          "exact_match_rate": 0.08333333333333333,
+          "functional_match_rate": 0.08888888888888889,
+          "param_only_match_rate": 0.1,
+          "step_count_match_rate": 0.09444444444444444
+        },
+        "unnecessary_steps": {
+          "n": 180,
+          "judge_success_rate": 0.8611111111111112,
+          "error_type_handled_rate": 0.8388888888888889,
+          "mean_judge_score": 95.0,
+          "functional_tool_acc": 0.10277777777777777,
+          "mean_param_accuracy": 0.0976851851851852,
+          "exact_match_rate": 0.08333333333333333,
+          "functional_match_rate": 0.08888888888888889,
+          "param_only_match_rate": 0.1,
+          "step_count_match_rate": 0.09444444444444444
+        },
+        "wrong_tool": {
+          "n": 180,
+          "judge_success_rate": 0.8333333333333334,
+          "error_type_handled_rate": 0.9111111111111111,
+          "mean_judge_score": 94.27777777777777,
+          "functional_tool_acc": 0.10277777777777777,
+          "mean_param_accuracy": 0.0976851851851852,
+          "exact_match_rate": 0.08333333333333333,
+          "functional_match_rate": 0.08888888888888889,
+          "param_only_match_rate": 0.1,
+          "step_count_match_rate": 0.09444444444444444
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "split_seed": 42,
+  "n_train_qids": 796,
+  "n_val_qids": 99,
+  "n_test_qids": 100,
+  "n_train_items": 7960,
+  "n_val_items": 990,
+  "n_test_items": 1000
+}

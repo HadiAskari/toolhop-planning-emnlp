@@ -1,0 +1,5 @@
+{
+  "n_test_queries": 150,
+  "n_test_examples": 1500,
+  "test_split_saved": "models/judge/test_split.json"
+}

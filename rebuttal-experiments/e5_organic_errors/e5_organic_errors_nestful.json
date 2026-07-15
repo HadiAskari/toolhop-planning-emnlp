@@ -1,0 +1,153 @@
+{
+  "config": {
+    "results": [
+      "../../scripts/baselines_nestful/llama3b/react_few_shot_nestful_Llama-3B_results.json",
+      "../../scripts/baselines_nestful/llama3b/tool_planner_Llama-3B-results.json",
+      "../../scripts/baselines_nestful/llama3b/alpha_umi_Llama-3.2-3B-Instruct_results_reparsed.json",
+      "../../scripts/baselines_nestful/llama3b/gnn4tp_sage_llama-3B_finetuned_results.json",
+      "../../scripts/baselines_nestful/qwen3b/react_few_shot_nestful_qwen-3B_results.json",
+      "../../scripts/baselines_nestful/qwen3b/tool_planner_qwen-3B-results.rescued.json",
+      "../../scripts/baselines_nestful/qwen3b/alpha_umi_qwen-3.2-3B-Instruct_results.json",
+      "../../scripts/baselines_nestful/qwen3b/gnn4tp_sage_qwen-3B_finetuned_results.json",
+      "../../scripts/baselines_nestful/qwen7b/react_few_shot_nestful_qwen-7b_results.json",
+      "../../scripts/baselines_nestful/qwen7b/tool_planner_qwen-7b-results.json",
+      "../../scripts/baselines_nestful/qwen7b/alpha_umi_qwen-7B-Instruct_results.json",
+      "../../scripts/baselines_nestful/qwen7b/gnn4tp_sage_qwen-7B_finetuned_results.json"
+    ],
+    "use_execution": false,
+    "gold_scores": null,
+    "rescore": false,
+    "judge_url": "http://localhost:8001/v1/chat/completions",
+    "workers": 8,
+    "output": "e5_organic_errors_nestful.json"
+  },
+  "per_method": {
+    "react_few_shot_nestful_Llama-3B": {
+      "source": "../../scripts/baselines_nestful/llama3b/react_few_shot_nestful_Llama-3B_results.json",
+      "run": "full",
+      "n_records": 1800,
+      "n_organic_failures": 1235,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 95.64372469635627,
+      "judge_flag_rate_on_failures": 0.12955465587044535,
+      "judge_mean_on_non_failures": 98.37837837837837
+    },
+    "Tool-Planner": {
+      "source": "../../scripts/baselines_nestful/llama3b/tool_planner_Llama-3B-results.json",
+      "run": "full",
+      "n_records": 1800,
+      "n_organic_failures": 1234,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 98.7034035656402,
+      "judge_flag_rate_on_failures": 0.04051863857374392,
+      "judge_mean_on_non_failures": 97.87985865724382
+    },
+    "alpha_umi_Llama-3.2-3B-Instruct_reparsed": {
+      "source": "../../scripts/baselines_nestful/llama3b/alpha_umi_Llama-3.2-3B-Instruct_results_reparsed.json",
+      "run": "full",
+      "n_records": 1800,
+      "n_organic_failures": 1800,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 72.34444444444445,
+      "judge_flag_rate_on_failures": 0.8266666666666667,
+      "judge_mean_on_non_failures": NaN
+    },
+    "GNN4TaskPlan-GRAPHSAGE": {
+      "source": "../../scripts/baselines_nestful/llama3b/gnn4tp_sage_llama-3B_finetuned_results.json",
+      "run": "full",
+      "n_records": 1800,
+      "n_organic_failures": 1750,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 72.50285714285714,
+      "judge_flag_rate_on_failures": 0.8822857142857143,
+      "judge_mean_on_non_failures": 82.0
+    },
+    "react_few_shot_nestful_qwen-3B": {
+      "source": "../../scripts/baselines_nestful/qwen3b/react_few_shot_nestful_qwen-3B_results.json",
+      "run": "full",
+      "n_records": 1800,
+      "n_organic_failures": 1245,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 93.95180722891567,
+      "judge_flag_rate_on_failures": 0.17751004016064256,
+      "judge_mean_on_non_failures": 98.58585858585859
+    },
+    "Tool-Planner [tool_planner_qwen-3B-results.rescued]": {
+      "source": "../../scripts/baselines_nestful/qwen3b/tool_planner_qwen-3B-results.rescued.json",
+      "run": "full",
+      "n_records": 1800,
+      "n_organic_failures": 1276,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 93.81661442006269,
+      "judge_flag_rate_on_failures": 0.18573667711598746,
+      "judge_mean_on_non_failures": 96.45038167938931
+    },
+    "alpha_umi_qwen-3.2-3B-Instruct": {
+      "source": "../../scripts/baselines_nestful/qwen3b/alpha_umi_qwen-3.2-3B-Instruct_results.json",
+      "run": "full",
+      "n_records": 1800,
+      "n_organic_failures": 1730,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 81.35838150289017,
+      "judge_flag_rate_on_failures": 0.5433526011560693,
+      "judge_mean_on_non_failures": 91.42857142857143
+    },
+    "GNN4TaskPlan-GRAPHSAGE [gnn4tp_sage_qwen-3B_finetuned_results]": {
+      "source": "../../scripts/baselines_nestful/qwen3b/gnn4tp_sage_qwen-3B_finetuned_results.json",
+      "run": "full",
+      "n_records": 1800,
+      "n_organic_failures": 1770,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 70.59887005649718,
+      "judge_flag_rate_on_failures": 0.9581920903954803,
+      "judge_mean_on_non_failures": 80.0
+    },
+    "react_few_shot_nestful_qwen-7b": {
+      "source": "../../scripts/baselines_nestful/qwen7b/react_few_shot_nestful_qwen-7b_results.json",
+      "run": "full",
+      "n_records": 1800,
+      "n_organic_failures": 1183,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 96.22147083685545,
+      "judge_flag_rate_on_failures": 0.11918850380388842,
+      "judge_mean_on_non_failures": 98.51788756388416
+    },
+    "Tool-Planner [tool_planner_qwen-7b-results]": {
+      "source": "../../scripts/baselines_nestful/qwen7b/tool_planner_qwen-7b-results.json",
+      "run": "full",
+      "n_records": 1800,
+      "n_organic_failures": 1052,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 98.50760456273764,
+      "judge_flag_rate_on_failures": 0.04752851711026616,
+      "judge_mean_on_non_failures": 98.9572192513369
+    },
+    "alpha_umi_qwen-7B-Instruct": {
+      "source": "../../scripts/baselines_nestful/qwen7b/alpha_umi_qwen-7B-Instruct_results.json",
+      "run": "full",
+      "n_records": 1800,
+      "n_organic_failures": 1517,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 86.74357284113381,
+      "judge_flag_rate_on_failures": 0.3671720500988794,
+      "judge_mean_on_non_failures": 96.36042402826855
+    },
+    "GNN4TaskPlan-GRAPHSAGE [gnn4tp_sage_qwen-7B_finetuned_results]": {
+      "source": "../../scripts/baselines_nestful/qwen7b/gnn4tp_sage_qwen-7B_finetuned_results.json",
+      "run": "full",
+      "n_records": 1800,
+      "n_organic_failures": 1705,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 72.95014662756599,
+      "judge_flag_rate_on_failures": 0.7595307917888563,
+      "judge_mean_on_non_failures": 79.47368421052632
+    }
+  },
+  "combined": {
+    "n_failures_total": 17497,
+    "judge_mean_on_failures": 84.1767160084586,
+    "judge_flag_rate_on_failures": 0.4788820940732697,
+    "gold_reference": null
+  },
+  "rescored": null
+}

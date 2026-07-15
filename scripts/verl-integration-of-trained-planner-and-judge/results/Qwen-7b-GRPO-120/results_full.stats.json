@@ -1,0 +1,242 @@
+{
+  "config": {
+    "planner_model": "${FORTE_ROOT}/planner_rl/checkpoints_grpo_clean_qwen7b/global_step_120/actor",
+    "test_parquet": "${FORTE_ROOT}/planner_rl/data/verl_rl_full_clean/test.parquet",
+    "n": 5,
+    "temperatures": "0.2,0.4,0.6,0.8,1.0",
+    "temperature": null,
+    "max_new_tokens": 512,
+    "judge_max_tokens": 32,
+    "judge_eval_max_tokens": 300,
+    "output": "results/Qwen-7b-GRPO-120/results_full.json",
+    "stats_output": null,
+    "return_all": false,
+    "device": "cuda:0",
+    "judge_url": "http://localhost:8002/v1/chat/completions",
+    "perfect_only": false,
+    "full": true,
+    "resolved_temperatures": [
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0
+    ]
+  },
+  "runs": {
+    "full": {
+      "label": "FULL TEST SET  (Best-of-5, temps=[0.2, 0.4, 0.6, 0.8, 1.0])",
+      "n_examples": 1000,
+      "n_candidates": 5,
+      "gt_uses_nl_tools": false,
+      "judge_full_parse_rate": 0.988,
+      "accuracy": {
+        "judge_success_rate": 0.971,
+        "error_handled_rate": 0.991,
+        "bon1_success_rate": 0.97,
+        "bon_gain_pts": 0.09
+      },
+      "judge_scores": {
+        "bon_mean": 99.03,
+        "bon_median": 100.0,
+        "bon_std": 5.11,
+        "bon1_mean": 98.94,
+        "mean_of_n": 98.63,
+        "pct_gte_80": 97.1,
+        "pct_eq_100": 96.1
+      },
+      "temperature_diversity": {
+        "ladder": [
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "win_counts": {
+          "0.20": 351,
+          "0.40": 150,
+          "0.60": 165,
+          "0.80": 143,
+          "1.00": 191
+        },
+        "win_pct": {
+          "0.20": 35.1,
+          "0.40": 15.0,
+          "0.60": 16.5,
+          "0.80": 14.3,
+          "1.00": 19.1
+        },
+        "mean_score_by_temperature": {
+          "0.20": 98.94,
+          "0.40": 98.91,
+          "0.60": 98.53,
+          "0.80": 98.55,
+          "1.00": 98.21
+        }
+      },
+      "structural": {
+        "NOTE_tool_accuracy": "exact_tool_accuracy will be ~0 on ToolHop because GT tool names are natural-language sub-questions; use functional_tool_accuracy instead.",
+        "exact_match_rate": 0.02,
+        "functional_match_rate": 0.937,
+        "param_only_match_rate": 0.947,
+        "step_count_match_rate": 0.975,
+        "mean_functional_tool_acc": 0.96,
+        "mean_param_accuracy": 0.736,
+        "mean_dependency_accuracy": 0.923,
+        "tool_accuracy_dist": {
+          "0.0": 0,
+          "0-0.2": 0,
+          "0.2-0.5": 12,
+          "0.5-0.8": 91,
+          "0.8-1.0": 21,
+          "1.0": 876
+        }
+      },
+      "success_prediction_dist": {
+        "yes": {
+          "count": 960,
+          "pct": 96.0
+        },
+        "likely_yes": {
+          "count": 0,
+          "pct": 0.0
+        },
+        "uncertain": {
+          "count": 40,
+          "pct": 4.0
+        },
+        "likely_no": {
+          "count": 0,
+          "pct": 0.0
+        },
+        "no": {
+          "count": 0,
+          "pct": 0.0
+        }
+      },
+      "per_error_type": {
+        "circular_dependency": {
+          "n": 100,
+          "judge_success_rate": 0.97,
+          "error_type_handled_rate": 1.0,
+          "mean_judge_score": 99.0,
+          "functional_tool_acc": 0.9870714285714286,
+          "mean_param_accuracy": 0.7034824871404588,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.94,
+          "param_only_match_rate": 0.94,
+          "step_count_match_rate": 0.98
+        },
+        "forward_reference": {
+          "n": 100,
+          "judge_success_rate": 0.96,
+          "error_type_handled_rate": 1.0,
+          "mean_judge_score": 98.7,
+          "functional_tool_acc": 0.9884999999999999,
+          "mean_param_accuracy": 0.6977531035982567,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.92,
+          "param_only_match_rate": 0.93,
+          "step_count_match_rate": 0.98
+        },
+        "incomplete_plan": {
+          "n": 100,
+          "judge_success_rate": 0.96,
+          "error_type_handled_rate": 1.0,
+          "mean_judge_score": 98.7,
+          "functional_tool_acc": 0.9884999999999999,
+          "mean_param_accuracy": 0.7622774065297041,
+          "exact_match_rate": 0.06,
+          "functional_match_rate": 0.94,
+          "param_only_match_rate": 0.97,
+          "step_count_match_rate": 0.96
+        },
+        "inefficient_order": {
+          "n": 100,
+          "judge_success_rate": 0.97,
+          "error_type_handled_rate": 1.0,
+          "mean_judge_score": 99.0,
+          "functional_tool_acc": 0.979109523809524,
+          "mean_param_accuracy": 0.758430050842296,
+          "exact_match_rate": 0.04,
+          "functional_match_rate": 0.95,
+          "param_only_match_rate": 0.96,
+          "step_count_match_rate": 0.97
+        },
+        "missing_dependency": {
+          "n": 100,
+          "judge_success_rate": 0.97,
+          "error_type_handled_rate": 0.97,
+          "mean_judge_score": 99.0,
+          "functional_tool_acc": 0.9884999999999999,
+          "mean_param_accuracy": 0.7093607258132978,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.91,
+          "param_only_match_rate": 0.92,
+          "step_count_match_rate": 0.98
+        },
+        "none": {
+          "n": 100,
+          "judge_success_rate": 0.98,
+          "error_type_handled_rate": 0.98,
+          "mean_judge_score": 99.3,
+          "functional_tool_acc": 0.9884999999999999,
+          "mean_param_accuracy": 0.7682779964388987,
+          "exact_match_rate": 0.06,
+          "functional_match_rate": 0.95,
+          "param_only_match_rate": 0.96,
+          "step_count_match_rate": 0.98
+        },
+        "parameter_typo": {
+          "n": 100,
+          "judge_success_rate": 0.97,
+          "error_type_handled_rate": 0.97,
+          "mean_judge_score": 99.0,
+          "functional_tool_acc": 0.9891666666666667,
+          "mean_param_accuracy": 0.7142673442187497,
+          "exact_match_rate": 0.01,
+          "functional_match_rate": 0.92,
+          "param_only_match_rate": 0.92,
+          "step_count_match_rate": 0.98
+        },
+        "type_mismatch": {
+          "n": 100,
+          "judge_success_rate": 0.98,
+          "error_type_handled_rate": 1.0,
+          "mean_judge_score": 99.3,
+          "functional_tool_acc": 0.9884999999999999,
+          "mean_param_accuracy": 0.7284405142732466,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.94,
+          "param_only_match_rate": 0.95,
+          "step_count_match_rate": 0.98
+        },
+        "unnecessary_steps": {
+          "n": 100,
+          "judge_success_rate": 0.97,
+          "error_type_handled_rate": 0.99,
+          "mean_judge_score": 99.0,
+          "functional_tool_acc": 0.9770833333333334,
+          "mean_param_accuracy": 0.7528806237532641,
+          "exact_match_rate": 0.03,
+          "functional_match_rate": 0.94,
+          "param_only_match_rate": 0.95,
+          "step_count_match_rate": 0.96
+        },
+        "wrong_tool": {
+          "n": 100,
+          "judge_success_rate": 0.98,
+          "error_type_handled_rate": 1.0,
+          "mean_judge_score": 99.3,
+          "functional_tool_acc": 0.7299800000000001,
+          "mean_param_accuracy": 0.7677889664425159,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.96,
+          "param_only_match_rate": 0.97,
+          "step_count_match_rate": 0.98
+        }
+      }
+    }
+  }
+}

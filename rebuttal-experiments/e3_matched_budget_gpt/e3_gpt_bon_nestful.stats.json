@@ -1,0 +1,35 @@
+{
+  "config": {
+    "test_parquet": "${FORTE_ROOT}/planner_rl/data/verl_rl_nestful_full/test.parquet",
+    "dataset": "auto",
+    "model": "gpt-5.5",
+    "api_key": "REDACTED",
+    "n": 5,
+    "max_output_tokens": 1024,
+    "judge_url": "http://localhost:8001/v1/chat/completions",
+    "judge_max_tokens": 32,
+    "judge_eval_max_tokens": 300,
+    "workers": 5,
+    "limit": null,
+    "perfect_only": true,
+    "full": false,
+    "output": "e3_gpt_bon_nestful.json",
+    "stats_output": null,
+    "resolved_dataset": "nestful"
+  },
+  "runs": {
+    "perfect_only": {
+      "label": "GPT-BoN-gpt-5.5 \u2014 perfect_only",
+      "n_examples": 170,
+      "jsr": 0.17647058823529413,
+      "mean_judge_score": 74.88235294117646,
+      "functional_match": 0.35294117647058826,
+      "param_accuracy": 0.4960025676937439,
+      "dependency_accuracy": 0.7930672268907564,
+      "exact_match": 0.27647058823529413,
+      "step_count_match": 0.48823529411764705,
+      "bon_gain_vs_first_sample": 1.411764705882348,
+      "temperature_supported": false
+    }
+  }
+}

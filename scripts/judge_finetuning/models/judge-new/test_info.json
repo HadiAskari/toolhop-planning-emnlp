@@ -1,0 +1,5 @@
+{
+  "n_test_queries": 100,
+  "n_test_examples": 1000,
+  "test_split_saved": "${FORTE_ROOT}/judge_finetuning/models/judge-new/test_split.json"
+}

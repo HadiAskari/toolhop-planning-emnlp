@@ -1,0 +1,194 @@
+{
+  "config": {
+    "planner_model": "meta-llama/Llama-3.2-3B-Instruct",
+    "caller_model": null,
+    "test_parquet": "${FORTE_ROOT}/planner_rl/data/verl_rl_full_clean/test.parquet",
+    "mode": "single-model",
+    "max_steps": 8,
+    "judge_max_tokens": 300,
+    "output": "alpha_umi_Llama-3.2-3B-Instruct_results.json",
+    "stats_output": null,
+    "return_trajectory": false,
+    "planner_device": "cuda:0",
+    "caller_device": "cuda:0",
+    "judge_url": "http://localhost:8001/v1/chat/completions",
+    "perfect_only": false,
+    "full": true,
+    "limit": null
+  },
+  "runs": {
+    "full": {
+      "label": "FULL  \u03b1-UMi (reparsed) [ToolHop]",
+      "method": "\u03b1-UMi (prompting) \u2014 reparsed",
+      "alpha_umi_mode": "single-model",
+      "n_examples": 1000,
+      "gt_uses_nl_tools": false,
+      "judge_full_parse_rate": 0.529,
+      "empty_plan_rate": 0.0,
+      "accuracy": {
+        "judge_success_rate": 0.0,
+        "error_handled_rate": 0.607
+      },
+      "judge_scores": {
+        "mean": 67.59,
+        "median": 70.0,
+        "std": 10.04,
+        "pct_gte_80": 0.0,
+        "pct_eq_100": 0.0
+      },
+      "structural": {
+        "exact_match_rate": 0.0,
+        "functional_match_rate": 0.0,
+        "param_only_match_rate": 0.05,
+        "step_count_match_rate": 0.028,
+        "mean_functional_tool_acc": 0.365,
+        "mean_param_accuracy": 0.2,
+        "mean_dependency_accuracy": 0.115
+      },
+      "success_prediction_dist": {
+        "yes": {
+          "count": 0,
+          "pct": 0.0
+        },
+        "likely_yes": {
+          "count": 0,
+          "pct": 0.0
+        },
+        "uncertain": {
+          "count": 1000,
+          "pct": 100.0
+        },
+        "likely_no": {
+          "count": 0,
+          "pct": 0.0
+        },
+        "no": {
+          "count": 0,
+          "pct": 0.0
+        }
+      },
+      "per_error_type": {
+        "circular_dependency": {
+          "n": 100,
+          "judge_success_rate": 0.0,
+          "error_type_handled_rate": 0.94,
+          "mean_judge_score": 67.6,
+          "functional_tool_acc": 0.3644702380952382,
+          "mean_param_accuracy": 0.1999518588413349,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.0,
+          "param_only_match_rate": 0.05,
+          "step_count_match_rate": 0.03
+        },
+        "forward_reference": {
+          "n": 100,
+          "judge_success_rate": 0.0,
+          "error_type_handled_rate": 0.93,
+          "mean_judge_score": 67.4,
+          "functional_tool_acc": 0.3644702380952382,
+          "mean_param_accuracy": 0.20038664145003057,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.0,
+          "param_only_match_rate": 0.05,
+          "step_count_match_rate": 0.03
+        },
+        "incomplete_plan": {
+          "n": 100,
+          "judge_success_rate": 0.0,
+          "error_type_handled_rate": 0.94,
+          "mean_judge_score": 67.6,
+          "functional_tool_acc": 0.3652083333333334,
+          "mean_param_accuracy": 0.20087257495386687,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.0,
+          "param_only_match_rate": 0.05,
+          "step_count_match_rate": 0.02
+        },
+        "inefficient_order": {
+          "n": 100,
+          "judge_success_rate": 0.0,
+          "error_type_handled_rate": 0.84,
+          "mean_judge_score": 67.6,
+          "functional_tool_acc": 0.3644702380952382,
+          "mean_param_accuracy": 0.20038664145003057,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.0,
+          "param_only_match_rate": 0.05,
+          "step_count_match_rate": 0.03
+        },
+        "missing_dependency": {
+          "n": 100,
+          "judge_success_rate": 0.0,
+          "error_type_handled_rate": 0.03,
+          "mean_judge_score": 67.6,
+          "functional_tool_acc": 0.3644702380952382,
+          "mean_param_accuracy": 0.20038664145003057,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.0,
+          "param_only_match_rate": 0.05,
+          "step_count_match_rate": 0.03
+        },
+        "none": {
+          "n": 100,
+          "judge_success_rate": 0.0,
+          "error_type_handled_rate": 0.0,
+          "mean_judge_score": 68.1,
+          "functional_tool_acc": 0.3644702380952382,
+          "mean_param_accuracy": 0.20038664145003057,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.0,
+          "param_only_match_rate": 0.05,
+          "step_count_match_rate": 0.03
+        },
+        "parameter_typo": {
+          "n": 100,
+          "judge_success_rate": 0.0,
+          "error_type_handled_rate": 0.01,
+          "mean_judge_score": 67.6,
+          "functional_tool_acc": 0.3644702380952382,
+          "mean_param_accuracy": 0.20038664145003057,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.0,
+          "param_only_match_rate": 0.05,
+          "step_count_match_rate": 0.03
+        },
+        "type_mismatch": {
+          "n": 100,
+          "judge_success_rate": 0.0,
+          "error_type_handled_rate": 0.82,
+          "mean_judge_score": 67.6,
+          "functional_tool_acc": 0.3644702380952382,
+          "mean_param_accuracy": 0.20038664145003057,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.0,
+          "param_only_match_rate": 0.05,
+          "step_count_match_rate": 0.03
+        },
+        "unnecessary_steps": {
+          "n": 100,
+          "judge_success_rate": 0.0,
+          "error_type_handled_rate": 0.63,
+          "mean_judge_score": 67.4,
+          "functional_tool_acc": 0.3656250000000001,
+          "mean_param_accuracy": 0.20118931703531484,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.0,
+          "param_only_match_rate": 0.05,
+          "step_count_match_rate": 0.02
+        },
+        "wrong_tool": {
+          "n": 100,
+          "judge_success_rate": 0.0,
+          "error_type_handled_rate": 0.93,
+          "mean_judge_score": 67.4,
+          "functional_tool_acc": 0.36589880952380965,
+          "mean_param_accuracy": 0.20038664145003057,
+          "exact_match_rate": 0.0,
+          "functional_match_rate": 0.0,
+          "param_only_match_rate": 0.05,
+          "step_count_match_rate": 0.03
+        }
+      }
+    }
+  }
+}

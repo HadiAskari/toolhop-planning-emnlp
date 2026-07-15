@@ -1,0 +1,14 @@
+{
+  "dataset": "toolhop",
+  "split_seed": 42,
+  "perfect_only": true,
+  "min_quality_score": 95,
+  "n_filtered_train": 6984,
+  "n_filtered_val": 875,
+  "n_train_qids": 786,
+  "n_val_qids": 99,
+  "n_test_qids": 100,
+  "n_train_items": 976,
+  "n_val_items": 115,
+  "n_test_items": 1000
+}

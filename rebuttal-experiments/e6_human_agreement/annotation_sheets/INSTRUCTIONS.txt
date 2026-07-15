@@ -1,0 +1,21 @@
+FORTE human agreement study — annotator instructions
+====================================================
+You are shown a user query and a multi-step tool plan. Judge SYNTACTIC plan
+correctness only (the same rubric the paper's judge uses):
+ - Are all required parameters provided, tools spelled correctly, steps present?
+ - Are {{N}} references valid (no forward references, no circular deps,
+   no hardcoded literals where a {{N}} reference is clearly needed)?
+ - Do NOT judge whether the plan semantically answers the query, and do NOT
+   type-check any value containing {{N}}.
+
+Fill in two columns:
+ - human_acceptable: yes  (no errors, or only minor issues — would score >= 80/100)
+                     no   (a substantive structural error — would score < 80/100)
+ - human_error_type: one of
+     none | type_mismatch | missing_dependency | wrong_tool | parameter_typo |
+     circular_dependency | inefficient_order | incomplete_plan |
+     unnecessary_steps | forward_reference | other
+   (the FIRST/most severe error you see; 'none' iff acceptable with no issues)
+
+Work independently. Do not discuss items with the other annotator until both
+sheets are complete.

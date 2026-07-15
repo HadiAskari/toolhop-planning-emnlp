@@ -1,0 +1,153 @@
+{
+  "config": {
+    "results": [
+      "../../scripts/baselines/react_few_shot_Llama-3B-Instruct_results.json",
+      "../../scripts/baselines/react_few_shot_Qwen2.5-3B-Instruct_results.json",
+      "../../scripts/baselines/react_few_shot_Qwen2.5-7B-Instruct_results.json",
+      "../../scripts/baselines/tool_planner_Llama-3B-results.json",
+      "../../scripts/baselines/tool_planner_Qwen2.5-3B-Instruct_results.rescued.json",
+      "../../scripts/baselines/tool_planner_Qwen2.5-7B-Instruct_results.json",
+      "../../scripts/baselines/alpha_umi_Llama-3.2-3B-Instruct_results_reparsed.json",
+      "../../scripts/baselines/alpha_umi_Qwen2.5-3B-Instruct_results.json",
+      "../../scripts/baselines/alpha_umi_Qwen2.5-7B-Instruct_results.json",
+      "../../scripts/baselines/gnn4tp_sage_Llama-3B_finetuned_results.json",
+      "../../scripts/baselines/gnn4tp_sage_Qwen-3B_finetuned_results.json",
+      "../../scripts/baselines/gnn4tp_sage_Qwen-7B_finetuned_results.json"
+    ],
+    "use_execution": false,
+    "gold_scores": null,
+    "rescore": false,
+    "judge_url": "http://localhost:8001/v1/chat/completions",
+    "workers": 8,
+    "output": "e5_organic_errors_toolhop.json"
+  },
+  "per_method": {
+    "react_few_shot_Llama-3B-Instruct": {
+      "source": "../../scripts/baselines/react_few_shot_Llama-3B-Instruct_results.json",
+      "run": "full",
+      "n_records": 1000,
+      "n_organic_failures": 246,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 81.17886178861788,
+      "judge_flag_rate_on_failures": 0.6097560975609756,
+      "judge_mean_on_non_failures": 95.88709677419355
+    },
+    "react_few_shot_Qwen2.5-3B-Instruct": {
+      "source": "../../scripts/baselines/react_few_shot_Qwen2.5-3B-Instruct_results.json",
+      "run": "full",
+      "n_records": 1000,
+      "n_organic_failures": 153,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 92.22222222222223,
+      "judge_flag_rate_on_failures": 0.21568627450980393,
+      "judge_mean_on_non_failures": 97.92207792207792
+    },
+    "react_few_shot_Qwen2.5-7B-Instruct": {
+      "source": "../../scripts/baselines/react_few_shot_Qwen2.5-7B-Instruct_results.json",
+      "run": "full",
+      "n_records": 1000,
+      "n_organic_failures": 200,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 76.0,
+      "judge_flag_rate_on_failures": 0.8,
+      "judge_mean_on_non_failures": 95.9125
+    },
+    "Tool-Planner": {
+      "source": "../../scripts/baselines/tool_planner_Llama-3B-results.json",
+      "run": "full",
+      "n_records": 1000,
+      "n_organic_failures": 83,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 86.86746987951807,
+      "judge_flag_rate_on_failures": 0.39759036144578314,
+      "judge_mean_on_non_failures": 95.0381679389313
+    },
+    "Tool-Planner [tool_planner_Qwen2.5-3B-Instruct_results.rescued]": {
+      "source": "../../scripts/baselines/tool_planner_Qwen2.5-3B-Instruct_results.rescued.json",
+      "run": "full",
+      "n_records": 1000,
+      "n_organic_failures": 73,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 83.56164383561644,
+      "judge_flag_rate_on_failures": 0.547945205479452,
+      "judge_mean_on_non_failures": 88.05825242718447
+    },
+    "Tool-Planner [tool_planner_Qwen2.5-7B-Instruct_results]": {
+      "source": "../../scripts/baselines/tool_planner_Qwen2.5-7B-Instruct_results.json",
+      "run": "full",
+      "n_records": 1000,
+      "n_organic_failures": 146,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 84.65753424657534,
+      "judge_flag_rate_on_failures": 0.4589041095890411,
+      "judge_mean_on_non_failures": 97.59953161592506
+    },
+    "alpha_umi_Llama-3.2-3B-Instruct_reparsed": {
+      "source": "../../scripts/baselines/alpha_umi_Llama-3.2-3B-Instruct_results_reparsed.json",
+      "run": "full",
+      "n_records": 1000,
+      "n_organic_failures": 1000,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 67.59,
+      "judge_flag_rate_on_failures": 1.0,
+      "judge_mean_on_non_failures": NaN
+    },
+    "alpha_umi_Qwen2.5-3B-Instruct": {
+      "source": "../../scripts/baselines/alpha_umi_Qwen2.5-3B-Instruct_results.json",
+      "run": "full",
+      "n_records": 1000,
+      "n_organic_failures": 950,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 72.87368421052632,
+      "judge_flag_rate_on_failures": 0.8526315789473684,
+      "judge_mean_on_non_failures": 94.0
+    },
+    "alpha_umi_Qwen2.5-7B-Instruct": {
+      "source": "../../scripts/baselines/alpha_umi_Qwen2.5-7B-Instruct_results.json",
+      "run": "full",
+      "n_records": 1000,
+      "n_organic_failures": 787,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 76.35324015247777,
+      "judge_flag_rate_on_failures": 0.758576874205845,
+      "judge_mean_on_non_failures": 83.6150234741784
+    },
+    "GNN4TaskPlan-GRAPHSAGE": {
+      "source": "../../scripts/baselines/gnn4tp_sage_Llama-3B_finetuned_results.json",
+      "run": "full",
+      "n_records": 1000,
+      "n_organic_failures": 880,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 71.5909090909091,
+      "judge_flag_rate_on_failures": 0.9431818181818182,
+      "judge_mean_on_non_failures": 92.5
+    },
+    "GNN4TaskPlan-GRAPHSAGE [gnn4tp_sage_Qwen-3B_finetuned_results]": {
+      "source": "../../scripts/baselines/gnn4tp_sage_Qwen-3B_finetuned_results.json",
+      "run": "full",
+      "n_records": 1000,
+      "n_organic_failures": 980,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 70.0,
+      "judge_flag_rate_on_failures": 1.0,
+      "judge_mean_on_non_failures": 100.0
+    },
+    "GNN4TaskPlan-GRAPHSAGE [gnn4tp_sage_Qwen-7B_finetuned_results]": {
+      "source": "../../scripts/baselines/gnn4tp_sage_Qwen-7B_finetuned_results.json",
+      "run": "full",
+      "n_records": 1000,
+      "n_organic_failures": 750,
+      "failure_criterion": "functional_match",
+      "judge_mean_on_failures": 72.13333333333334,
+      "judge_flag_rate_on_failures": 0.92,
+      "judge_mean_on_non_failures": 90.0
+    }
+  },
+  "combined": {
+    "n_failures_total": 6248,
+    "judge_mean_on_failures": 73.23303457106275,
+    "judge_flag_rate_on_failures": 0.8626760563380281,
+    "gold_reference": null
+  },
+  "rescored": null
+}

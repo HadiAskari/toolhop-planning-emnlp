@@ -1,0 +1,10 @@
+{
+  "dataset": "nestful",
+  "split_seed": 42,
+  "n_train_qids": 1430,
+  "n_val_qids": 178,
+  "n_test_qids": 180,
+  "n_train_items": 14300,
+  "n_val_items": 1780,
+  "n_test_items": 1800
+}
