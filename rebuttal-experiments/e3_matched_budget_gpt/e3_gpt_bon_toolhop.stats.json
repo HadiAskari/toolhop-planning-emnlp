@@ -1,9 +1,9 @@
 {
   "config": {
     "test_parquet": "${FORTE_ROOT}/planner_rl/data/verl_rl_full_clean/test.parquet",
-    "dataset": "auto",
+    "dataset": "toolhop",
     "model": "gpt-5.5",
-    "api_key": "REDACTED",
+    "api_key": null,
     "n": 5,
     "max_output_tokens": 1024,
     "judge_url": "http://localhost:8001/v1/chat/completions",
@@ -21,14 +21,23 @@
     "perfect_only": {
       "label": "GPT-BoN-gpt-5.5 \u2014 perfect_only",
       "n_examples": 98,
-      "jsr": 0.8571428571428571,
-      "mean_judge_score": 95.40816326530613,
-      "functional_match": 0.3163265306122449,
-      "param_accuracy": 0.37071439191175243,
-      "dependency_accuracy": 0.8380466472303206,
+      "jsr": 0.8673469387755102,
+      "mean_judge_score": 95.71428571428571,
+      "functional_match": 0.29591836734693877,
+      "param_accuracy": 0.36825495812763026,
+      "dependency_accuracy": 0.8319241982507288,
       "exact_match": 0.0,
-      "step_count_match": 0.5714285714285714,
-      "bon_gain_vs_first_sample": 4.591836734693885,
+      "step_count_match": 0.5816326530612245,
+      "first_sample_jsr": 0.7040816326530612,
+      "first_sample_mean_judge_score": 90.51020408163265,
+      "first_sample_functional_match": 0.35714285714285715,
+      "first_sample_param_accuracy": 0.41679642820183815,
+      "first_sample_dependency_accuracy": 0.8785714285714286,
+      "first_sample_exact_match": 0.0,
+      "first_sample_step_count_match": 0.6122448979591837,
+      "bon_gain_jsr_pts": 16.326530612244895,
+      "bon_gain_judge_score_pts": 5.2040816326530575,
+      "bon_gain_vs_first_sample": 5.2040816326530575,
       "temperature_supported": false
     }
   }

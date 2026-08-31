@@ -180,6 +180,13 @@ def evaluate_bon(client, examples, perfect_gt_by_qid, dataset, args, pool):
         struct_eval = evaluate_plan_vs_gt(parse_plan_steps(best_plan), struct_gt,
                                           tools=tools)
 
+        # First-sample (candidate 0, temps[0]) structural metrics — the
+        # single-sample baseline the meta-review asks us to report alongside
+        # Best-of-N. Scored against the SAME struct_gt as the selected winner,
+        # so the two rows are a clean intervention on the identical sample set.
+        struct_eval_bon1 = evaluate_plan_vs_gt(parse_plan_steps(candidates[0]),
+                                               struct_gt, tools=tools)
+
         error_type_handled = (judge_success if ref_is_perfect
                               else best_score["quality_score"] >= ex["quality_score"])
 
@@ -201,6 +208,12 @@ def evaluate_bon(client, examples, perfect_gt_by_qid, dataset, args, pool):
             "judge_full_parse":      best_score.get("_full_parse", False),
             "bon1_judge_score":      fast_scores[0]["quality_score"],
             "bon1_temperature":      temps[0],
+            "bon1_judge_success":         fast_scores[0]["quality_score"] >= 80,
+            "bon1_functional_match":      struct_eval_bon1["functional_match"],
+            "bon1_param_accuracy":        struct_eval_bon1["param_accuracy"],
+            "bon1_dependency_accuracy":   struct_eval_bon1["dependency_accuracy"],
+            "bon1_exact_match":           struct_eval_bon1["exact_match"],
+            "bon1_step_count_match":      struct_eval_bon1["step_count_match"],
             "all_candidate_scores":  [s["quality_score"] for s in fast_scores],
             "all_candidate_temperatures": list(temps),
             "mean_candidate_score":  float(np.mean([s["quality_score"] for s in fast_scores])),
@@ -232,16 +245,36 @@ def evaluate_bon(client, examples, perfect_gt_by_qid, dataset, args, pool):
 def compute_stats(results, label):
     if not results:
         return {}
+    # Best-of-N (selected winner) aggregate metrics — all fractions in [0,1]
+    # except *_judge_score (0-100) and *_pts (percentage points).
+    bon_jsr = mean([1.0 if r["judge_success"] else 0.0 for r in results])
+    fs_jsr  = mean([1.0 if r["bon1_judge_score"] >= 80 else 0.0 for r in results])
     return {
         "label": label,
         "n_examples": len(results),
-        "jsr": mean([1.0 if r["judge_success"] else 0.0 for r in results]),
+        # ---- Best-of-N (selected candidate) ----
+        "jsr": bon_jsr,
         "mean_judge_score": mean([r["best_judge_score"] for r in results]),
         "functional_match": mean([1.0 if r["functional_match"] else 0.0 for r in results]),
         "param_accuracy": mean([r["param_accuracy"] for r in results]),
         "dependency_accuracy": mean([r["dependency_accuracy"] for r in results]),
         "exact_match": mean([1.0 if r["exact_match"] else 0.0 for r in results]),
         "step_count_match": mean([1.0 if r["step_count_match"] else 0.0 for r in results]),
+        # ---- First sample (candidate 0 / temps[0]): the single-sample baseline ----
+        "first_sample_jsr": fs_jsr,
+        "first_sample_mean_judge_score": mean([r["bon1_judge_score"] for r in results]),
+        "first_sample_functional_match": mean([1.0 if r.get("bon1_functional_match") else 0.0 for r in results]),
+        "first_sample_param_accuracy": mean([r.get("bon1_param_accuracy", 0.0) for r in results]),
+        "first_sample_dependency_accuracy": mean([r.get("bon1_dependency_accuracy", 0.0) for r in results]),
+        "first_sample_exact_match": mean([1.0 if r.get("bon1_exact_match") else 0.0 for r in results]),
+        "first_sample_step_count_match": mean([1.0 if r.get("bon1_step_count_match") else 0.0 for r in results]),
+        # ---- Gains from judge selection (Best-of-N minus first sample) ----
+        # NOTE: bon_gain_vs_first_sample is a mean-JUDGE-SCORE delta (0-100
+        # scale), NOT a JSR gain. Use bon_gain_jsr_pts for the JSR change in
+        # percentage points. (The former was previously misread as a JSR gain.)
+        "bon_gain_jsr_pts": (bon_jsr - fs_jsr) * 100.0,
+        "bon_gain_judge_score_pts": (mean([r["best_judge_score"] for r in results])
+                                     - mean([r["bon1_judge_score"] for r in results])),
         "bon_gain_vs_first_sample": (mean([r["best_judge_score"] for r in results])
                                      - mean([r["bon1_judge_score"] for r in results])),
     }
